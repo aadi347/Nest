@@ -8,6 +8,8 @@ export default {
     extend: {
       colors: {
         'custom-purple': '#6B46C1',
+        'custom-green': '#38A169',
+        'custom-green-hover': '#187A45'
       },
       fontFamily: {
         aprila: ['Aprila', 'sans-serif'], // Add Aprila font
