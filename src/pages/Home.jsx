@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import MountainImage from "../assets/icons/hand-drawn-flat-design-mountain-landscape_23-2149158786.jpg";
 import { FaMapMarkerAlt, FaHome, FaDollarSign } from 'react-icons/fa';
+import SearchBar from '../components/searchBar';
 
 const Home = () => {
   return (
@@ -60,6 +61,9 @@ const Home = () => {
           ></div>
         </div>
       </div>
+      <div className="flex items-center space-x-10 px-4">
+          <SearchBar />
+        </div>
     </div>
   );
 };
