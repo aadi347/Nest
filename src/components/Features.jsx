@@ -2,39 +2,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Lottie from 'react-lottie';
-import animationData from "../lotties/kiss-of-the-heart.json"
+import PrimeLocation from "../assets/icons/location.png"
+import QualityInfrastructure from "../assets/icons/quality.png"
+import AffordableHousing from "../assets/icons/affordable.png"
 
 const features = [
   {
     title: "Affordable Housing",
     description: "Quality housing solutions at affordable prices, tailored to meet your needs.",
-    iconColor: "bg-indigo-100",
+    iconColor: "",
     iconSvg: (
-        <video className="h-8 w-8" autoPlay loop muted>
-        <source src="../assets/icons/affordable.webm" type="video/webm" />
-        Your browser does not support the video tag.
-      </video>
+        <img src={AffordableHousing} className='w-8 h-8'></img>
     ),
   },
   {
     title: "Prime Locations",
     description: "Find properties in the best locations to ensure a convenient lifestyle.",
-    iconColor: "bg-green-100",
+    iconColor: "",
     iconSvg: (
-      <svg className="h-8 w-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 21v-2a4 4 0 014-4h10a4 4 0 014 4v2M16 3.13a4 4 0 11-8 0 4 4 0 018 0z" />
-      </svg>
+        <img src={PrimeLocation} className='w-8 h-8'></img>
     ),
   },
   {
     title: "Quality Infrastructure",
     description: "Built with top-notch materials to ensure durability and safety.",
-    iconColor: "bg-yellow-100",
+    iconColor: "",
     iconSvg: (
-      <svg className="h-8 w-8 text-yellow-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-.5 0-1 .5-1 1.25v5.5c0 .75.5 1.25 1 1.25s1-.5 1-1.25v-5.5c0-.75-.5-1.25-1-1.25zM11 4a1 1 0 112 0v1a1 1 0 01-2 0V4z" />
-      </svg>
+        <img src={QualityInfrastructure} className='w-8 h-8'></img>
     ),
   },
 ];

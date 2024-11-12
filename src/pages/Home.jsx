@@ -4,6 +4,9 @@ import MountainImage from "../assets/icons/hand-drawn-flat-design-mountain-lands
 import { FaMapMarkerAlt, FaHome, FaDollarSign } from 'react-icons/fa';
 import SearchBar from '../components/searchBar';
 import Features from '../components/Features';
+import Testimonials from '../components/Testimonials';
+import PropertyListings from '../components/PropertyListings';
+import AboutUs from '../components/AboutUs';
 
 const Home = () => {
   return (
@@ -68,6 +71,15 @@ const Home = () => {
         <div>
           <Features />
         </div>
+        <div>
+          <Testimonials />
+        </div>
+        <div>
+        <PropertyListings/>
+        </div>
+        
+        <AboutUs/>
+        
     </div>
   );
 };
