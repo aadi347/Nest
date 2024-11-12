@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import NestLogo from "../assets/icons/house-chimney-window.png";
 import SearchLogo from "../assets/icons/search.svg";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -34,8 +35,8 @@ const Navbar = () => {
         <Link to="/about" className="text-white hover:text-gray-300">
           About
         </Link>
-        <Link to="/services" className="text-white hover:text-gray-300">
-          Services
+        <Link to="/Login" className="text-white hover:text-gray-300">
+          Login
         </Link>
         <Link to="/contact" className="text-white hover:text-gray-300">
           Contact
