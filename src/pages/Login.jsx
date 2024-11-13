@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
-    <div className="relative flex items-center justify-center h-screen bg-cover bg-center" style={{ backgroundImage: 'https://img.freepik.com/free-vector/background-video-conference-urban-city_23-2148641634.jpg?t=st=1731431739~exp=1731435339~hmac=f4ebfc77af8ab7877010783ed2977f0d6804b4106bc4c999797ec336b22f1201&w=1480' }}>
+    <div className="relative flex items-center justify-center h-screen bg-cover bg-center" 
+    style={{ 
+        backgroundImage: 'url(https://img.freepik.com/free-vector/background-video-conference-urban-city_23-2148641634.jpg?t=st=1731431739~exp=1731435339~hmac=f4ebfc77af8ab7877010783ed2977f0d6804b4106bc4c999797ec336b22f1201&w=1480)' }}>
       <div className="absolute inset-0 bg-black opacity-30"></div> {/* Optional overlay for better contrast */}
       
       <div className="relative flex max-w-4xl w-full mx-4 md:mx-0 bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden">

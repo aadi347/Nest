@@ -7,6 +7,7 @@ import Features from '../components/Features';
 import Testimonials from '../components/Testimonials';
 import PropertyListings from '../components/PropertyListings';
 import AboutUs from '../components/AboutUs';
+import ContactNewsletter from '../components/ContactNewsletter';
 
 const Home = () => {
   return (
@@ -79,6 +80,8 @@ const Home = () => {
         </div>
         
         <AboutUs/>
+
+        <ContactNewsletter />
         
     </div>
   );
