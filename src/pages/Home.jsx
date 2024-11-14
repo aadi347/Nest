@@ -10,6 +10,7 @@ import AboutUs from '../components/AboutUs';
 import ContactNewsletter from '../components/ContactNewsletter';
 
 const Home = () => {
+
   return (
     <div className="bg-custom-purple">
       <div className="relative isolate px-6 pt-14 lg:px-8">
@@ -48,10 +49,11 @@ const Home = () => {
               >
                 Sign Up
               </a>
-              <a href="#" className="text-sm/6 font-semibold text-gray-900">
-                Learn more <span aria-hidden="true">→</span>
+              <a href="/signup" className="text-sm/6 font-semibold text-gray-900">
+                Register Your Flat <span aria-hidden="true">→</span>
               </a>
             </div>
+            
           </div>
         </div>
         <div

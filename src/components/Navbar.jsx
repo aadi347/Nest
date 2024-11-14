@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import NestLogo from "../assets/icons/house-chimney-window.png";
 import SearchLogo from "../assets/icons/search.svg";
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 

@@ -4,6 +4,10 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Footer from './components/Footer';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Sitemap from './pages/Sitemap';
+import ContactUs from './pages/ContactUs';
+import SignUp from './pages/SignUp';
 
 const App = () => {
   return (
@@ -12,6 +16,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/sitemap" element={<Sitemap />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
       <Footer />
     </Router>
