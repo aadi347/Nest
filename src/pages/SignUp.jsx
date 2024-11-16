@@ -16,7 +16,7 @@ const SignUp = () => {
         <div className="w-1/2 bg-white flex justify-center items-center">
           <div className="w-4/5 max-w-[350px] p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl font-semibold text-custom-purple mb-6">Sign Up</h2>
-            <form>
+            <form action="/signup" method="POST">
               <input
                 type="text"
                 id="name"
