@@ -8,6 +8,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import Sitemap from './pages/Sitemap';
 import ContactUs from './pages/ContactUs';
 import SignUp from './pages/SignUp';
+import FlatRegistrationForm from './pages/FlatRegistrationForm';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/flatregistrationform" element={<FlatRegistrationForm />} />
       </Routes>
       <Footer />
     </Router>

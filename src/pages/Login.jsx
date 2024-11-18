@@ -15,12 +15,12 @@ const Login = () => {
     setLoading(true);
 
     try {
-      // Sending login data to backend
+      
       const res = await axios.post('http://localhost:3000/login', data);
 
       if (res.status === 200) {
         setLoading(false);
-        navigate('/'); // Redirect to home page
+        navigate('/'); 
       } else {
         setLoading(false);
         alert('Invalid login credentials. Please try again.');
@@ -44,16 +44,16 @@ const Login = () => {
           'url(https://img.freepik.com/free-vector/flat-design-lake-scenery_23-2149161406.jpg?t=st=1731820987~exp=1731824587~hmac=11bb8cb1986f044c7cd5bb052906e59b527b08e313244b0df4ca9e0760014ff4&w=1480)',
       }}
     >
-      {/* Optional overlay */}
+     
       <div className="absolute inset-0 bg-black opacity-30"></div>
       
       <div className="relative flex max-w-4xl w-full mx-4 md:mx-0 bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden">
-        {/* Illustration Section */}
+        
         <div className="hidden md:flex md:w-1/2 lg:w-2/5 p-6 items-center justify-center">
           <img src="/path/to/your/illustration.png" alt="Illustration" className="w-full h-auto object-cover" />
         </div>
 
-        {/* Login Form Section */}
+      
         <div className="w-full md:w-1/2 lg:w-3/5 p-8 md:p-12">
           <h2 className="text-3xl font-semibold text-white mb-6">Welcome to NEST</h2>
           <p className="text-white mb-6">Please sign in to continue</p>

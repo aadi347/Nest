@@ -44,12 +44,12 @@ const Home = () => {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="/login"
+                href="/signup"
                 className="rounded-md bg-custom-green px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-custom-green-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Sign Up
               </a>
-              <a href="/signup" className="text-sm/6 font-semibold text-gray-900">
+              <a href="/flatregistrationform" className="text-sm/6 font-semibold text-gray-900">
                 Register Your Flat <span aria-hidden="true">→</span>
               </a>
             </div>

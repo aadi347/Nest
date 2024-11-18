@@ -8,23 +8,23 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   const handleSignup = async (e) => {
     e.preventDefault();
     const data = { name, email, password };
 
-    setLoading(true); // Set loading state to true
+    setLoading(true); 
     try {
       const res = await axios.post("http://localhost:3000/signup", data);
-      setLoading(false); // Set loading state to false
+      setLoading(false); 
       alert("Signup successful!");
       console.log(res.data);
 
-      // Redirect to the login page
+      
       navigate("/login");
     } catch (error) {
-      setLoading(false); // Set loading state to false
+      setLoading(false); 
       console.error(error.response?.data || error.message);
       alert("An error occurred while signing up. Please check the console.");
     }
@@ -33,12 +33,12 @@ const SignUp = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="w-[1212px] h-[611px] rounded-[50px] flex overflow-hidden">
-        {/* Left side (Blue) */}
+        
         <div className="w-1/2 bg-custom-purple flex justify-center items-center text-white p-8">
           <h1 className="text-4xl">Welcome!</h1>
         </div>
 
-        {/* Right side (Red with Signup form) */}
+        
         <div className="w-1/2 bg-white flex justify-center items-center">
           <div className="w-4/5 max-w-[350px] p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl font-semibold text-custom-purple mb-6">Sign Up</h2>
