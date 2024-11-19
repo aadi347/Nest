@@ -2,34 +2,43 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const FlatRegistrationForm = () => {
-  const [formData, setFormData] = useState({
-    flatType: "",
-    rent: "",
-    location: "",
-    parking: "",
-    utilities: "",
-    houseName: "",
-    deposit: "",
-    carpetArea: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const [loading, setLoading] = useState(false);
+  const [flatType, setFlatType] = useState("");
+  const [rent, setRent] = useState("");
+  const [location, setLocation] = useState("");
+  const [parking, setParking] = useState("");
+  const [utilities, setUtilities] = useState("");
+  const [houseName, setHouseName] = useState("");
+  const [deposit, setDeposit] = useState("");
+  const [carpetArea, setCarpetArea] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = {flatType, rent, location, parking, utilities, houseName, deposit, carpetArea};
+    const data = {
+      flatType,
+      rent,
+      location,
+      parking,
+      utilities,
+      houseName,
+      deposit,
+      carpetArea,
+    };
+
+    setLoading(true);
     try {
-        const res = await axios.post('http://localhost:3000/flatregistartion', data);
-        alert("Property regsitration completed sucessfully");
-        console.log(res.data);
+      const res = await axios.post(
+        "http://localhost:3000/flatregistartion",
+        data
+      );
+      setLoading(false);
+      alert("Property registration completed successfully!");
+      console.log(res.data);
     } catch (error) {
-        console.error(error.response?.data || error.message);
-        alert("An error occurred while registration your property");
+      setLoading(false);
+      console.error(error.response?.data || error.message);
+      alert("An error occurred while registering your property.");
     }
-   
   };
 
   return (
@@ -48,9 +57,8 @@ const FlatRegistrationForm = () => {
               Flat Type <span className="text-red-500">*</span>
             </label>
             <select
-              name="flatType"
-              value={formData.flatType}
-              onChange={handleChange}
+              value={flatType}
+              onChange={(e) => setFlatType(e.target.value)}
               className="mt-1 block w-full p-3 border rounded-md focus:ring-custom-purple focus:border-indigo-500"
               required
             >
@@ -71,9 +79,8 @@ const FlatRegistrationForm = () => {
             </label>
             <input
               type="number"
-              name="rent"
-              value={formData.rent}
-              onChange={handleChange}
+              value={rent}
+              onChange={(e) => setRent(e.target.value)}
               className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
               placeholder="Enter Rent"
               required
@@ -87,9 +94,8 @@ const FlatRegistrationForm = () => {
             </label>
             <input
               type="text"
-              name="location"
-              value={formData.location}
-              onChange={handleChange}
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
               className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
               placeholder="Enter Location"
               required
@@ -102,9 +108,8 @@ const FlatRegistrationForm = () => {
               Parking <span className="text-red-500">*</span>
             </label>
             <select
-              name="parking"
-              value={formData.parking}
-              onChange={handleChange}
+              value={parking}
+              onChange={(e) => setParking(e.target.value)}
               className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
               required
             >
@@ -124,9 +129,8 @@ const FlatRegistrationForm = () => {
               Electricity & Water Supply <span className="text-red-500">*</span>
             </label>
             <select
-              name="utilities"
-              value={formData.utilities}
-              onChange={handleChange}
+              value={utilities}
+              onChange={(e) => setUtilities(e.target.value)}
               className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
               required
             >
@@ -145,9 +149,8 @@ const FlatRegistrationForm = () => {
             </label>
             <input
               type="text"
-              name="houseName"
-              value={formData.houseName}
-              onChange={handleChange}
+              value={houseName}
+              onChange={(e) => setHouseName(e.target.value)}
               className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
               placeholder="Enter House Name"
             />
@@ -160,9 +163,8 @@ const FlatRegistrationForm = () => {
             </label>
             <input
               type="number"
-              name="deposit"
-              value={formData.deposit}
-              onChange={handleChange}
+              value={deposit}
+              onChange={(e) => setDeposit(e.target.value)}
               className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
               placeholder="Enter Deposit Amount"
             />
@@ -175,9 +177,8 @@ const FlatRegistrationForm = () => {
             </label>
             <input
               type="number"
-              name="carpetArea"
-              value={formData.carpetArea}
-              onChange={handleChange}
+              value={carpetArea}
+              onChange={(e) => setCarpetArea(e.target.value)}
               className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
               placeholder="Enter Carpet Area"
             />
@@ -188,10 +189,10 @@ const FlatRegistrationForm = () => {
         <div className="mt-6 flex justify-center">
           <button
             type="submit"
-            onClick={handleSubmit}
+            disabled={loading}
             className="bg-indigo-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-indigo-500 transition duration-200"
           >
-            Submit
+            {loading ? "Submitting..." : "Submit"}
           </button>
         </div>
       </form>
