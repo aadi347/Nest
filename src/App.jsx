@@ -9,6 +9,7 @@ import Sitemap from './pages/Sitemap';
 import ContactUs from './pages/ContactUs';
 import SignUp from './pages/SignUp';
 import FlatRegistrationForm from './pages/FlatRegistrationForm';
+import Dashboard from './pages/Dashboard';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/flatregistrationform" element={<FlatRegistrationForm />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />
     </Router>

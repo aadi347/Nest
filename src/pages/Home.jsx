@@ -8,6 +8,7 @@ import Testimonials from '../components/Testimonials';
 import PropertyListings from '../components/PropertyListings';
 import AboutUs from '../components/AboutUs';
 import ContactNewsletter from '../components/ContactNewsletter';
+import Dashboard from './Dashboard';
 
 const Home = () => {
 
@@ -85,6 +86,7 @@ const Home = () => {
 
         <ContactNewsletter />
         
+        <Dashboard />
     </div>
   );
 };
