@@ -9,7 +9,9 @@ import Sitemap from './pages/Sitemap';
 import ContactUs from './pages/ContactUs';
 import SignUp from './pages/SignUp';
 import FlatRegistrationForm from './pages/FlatRegistrationForm';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './dashboard/Dashboard';
+import PropertyManagment from './dashboard/PropertyManagment';
+
 
 const App = () => {
   return (
@@ -24,6 +26,7 @@ const App = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/flatregistrationform" element={<FlatRegistrationForm />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/PropertyManagment" element={<PropertyManagment />} />
       </Routes>
       <Footer />
     </Router>

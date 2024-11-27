@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center p-4 bg-custom-purple">
+    <nav className="flex justify-between items-center p-4 bg-gradient-to-r from-custom-green to-custom-purple">
       <div className="text-white">
         <img src={NestLogo} alt="NestLogo" className='w-7 h-7 ml-16' />
       </div>

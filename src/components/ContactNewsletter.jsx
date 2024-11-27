@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ContactNewsletter = () => {
   return (
-    <section className="bg-custom-purple py-16 px-4 sm:px-6 lg:px-8 text-white">
+    <section className="bg-custom-purple py-16 px-4 sm:px-6 lg:px-8 text-white"> 
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-extrabold text-center sm:text-4xl mb-6">Stay Connected</h2>
         <p className="text-center text-lg mb-12 text-gray-300">

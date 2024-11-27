@@ -35,9 +35,9 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-center text-gray-800 sm:text-4xl">Our Key Features</h2>
+        <h2 className="text-3xl font-extrabold text-center bg-gradient-to-r from-custom-green to-custom-purple bg-clip-text text-transparent sm:text-4xl">Our Key Features</h2>
         <p className="mt-4 text-center text-lg text-gray-600">
           Discover the unique benefits that set us apart from the rest.
         </p>

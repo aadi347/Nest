@@ -7,9 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'custom-purple': '#6B46C1',
-        'custom-green': '#38A169',
-        'custom-green-hover': '#187A45'
+        'custom-purple': '#2f27ce',
+        'custom-green': '#8a2be2',
+        'custom-green-hover': '#443dff',
+        'custom-black': '#040316'
       },
       fontFamily: {
         aprila: ['Aprila', 'sans-serif'], 
