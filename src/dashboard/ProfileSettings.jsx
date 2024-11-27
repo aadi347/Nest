@@ -1,11 +1,13 @@
-//  ProfileSettings;
+import React from "react";
 
-import React, { useState } from "react";
-import axios from "axios";
 import Cropper from "./Cropper";
 
 const ProfileSettings = () => {
- 
+    return (
+        <div>
+          <Cropper />
+        </div>
+      );
 
 };
 

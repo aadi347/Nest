@@ -1,37 +1,24 @@
 // src/components/Navbar.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import NestLogo from "../assets/icons/house-chimney-window.png";
+import NestLogo from "../assets/icons/NestLogo.png"
 import SearchLogo from "../assets/icons/search.svg";
+import AboutUs from '../pages/AboutUs';
+
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    // Implement your search logic here
-    console.log('Search query:', searchQuery);
-  };
+  
 
   return (
     <nav className="flex justify-between items-center p-4 bg-gradient-to-r from-custom-green to-custom-purple">
       <div className="text-white">
-        <img src={NestLogo} alt="NestLogo" className='w-7 h-7 ml-16' />
+        <img src={NestLogo} alt="NestLogo" className='w-12 h-12 ml-16' />
       </div>
       <div
-        className={`${
-          isOpen ? 'block' : 'hidden'
-        } md:flex md:items-center md:space-x-6 ml-auto`}
-      >
+        className="md:flex md:items-center md:space-x-6 ml-auto">
         <Link to="/" className="text-white hover:text-gray-300">
           Home
         </Link>
-        <Link to="/about" className="text-white hover:text-gray-300">
+        <Link to="/AboutUs" className="text-white hover:text-gray-300">
           About
         </Link>
         <Link to="/Login" className="text-white hover:text-gray-300">
@@ -43,13 +30,12 @@ const Navbar = () => {
 
         {/* Search Box */}
         <form
-          onSubmit={handleSearchSubmit}
+        
           className="flex items-center bg-slate-100 rounded-xl pl-2 pr-4"
         >
           <input
             type="text"
-            value={searchQuery}
-            onChange={handleSearchChange}
+            
             placeholder="Search..."
             className="bg-transparent text-white outline-none placeholder-custom-purple w-32 md:w-48"
           />

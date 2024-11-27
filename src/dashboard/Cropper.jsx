@@ -122,11 +122,8 @@ const Cropper = () => {
 
   return (
     <>
-      <header>
-        <h1>React Avatar Cropper</h1>
-        <hr />
-      </header>
-      <main className="container">
+      
+      <main className="container shadow-custom-heavy rounded-3xl">
         <CropperModal
           modalOpen={modalOpen}
           src={src}
@@ -136,7 +133,7 @@ const Cropper = () => {
         <a href="/" onClick={handleInputClick}>
           <FcAddImage className="add-icon" />
         </a>
-        <small>Click to select image</small>
+        
         <input
           type="file"
           accept="image/*"
@@ -156,13 +153,6 @@ const Cropper = () => {
         </div>
       </main>
 
-      <footer>
-        <hr />
-        <a href="  Github: https://github.com/mrAJAY1">
-          <AiFillGithub />
-          &#160; Github
-        </a>
-      </footer>
     </>
   );
 };

@@ -11,6 +11,7 @@ import SignUp from './pages/SignUp';
 import FlatRegistrationForm from './pages/FlatRegistrationForm';
 import Dashboard from './dashboard/Dashboard';
 import PropertyManagment from './dashboard/PropertyManagment';
+import AboutUs from './pages/AboutUs';
 
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/flatregistrationform" element={<FlatRegistrationForm />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/PropertyManagment" element={<PropertyManagment />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
       </Routes>
       <Footer />
     </Router>
