@@ -26,7 +26,7 @@ const Dashboard = () => {
     <div className="flex h-screen bg-slate-50">
       {/* Sidebar */}
       <div className="w-1/4 bg-white border border-gray-200 rounded-3xl m-6 p-6">
-        <h2 className="text-2xl font-bold mb-6">Dashboard</h2>
+        <h2 className="text-2xl font-bold mb-6 border-b">Dashboard</h2>
         <ul className="space-y-4">
           <li>
             <button 

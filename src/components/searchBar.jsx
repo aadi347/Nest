@@ -4,7 +4,7 @@ import { FaMapMarkerAlt, FaHome, FaDollarSign } from 'react-icons/fa';
 
 const SearchBar = () => {
     return (
-      <div className="flex items-center justify-between relative bottom-72 max-w-3xl mx-auto p-4 bg-white rounded-full shadow-custom-heavy border-gray-300 border-1px">
+      <div className="flex items-center justify-between border relative bottom-72 max-w-3xl mx-auto p-4 bg-white rounded-full shadow-custom-heavy border-gray-300 border-1px">
         {/* Location Dropdown */}
         <div className="flex items-center space-x-2 px-4">
           <FaMapMarkerAlt className="text-purple-600" />
