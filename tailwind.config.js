@@ -6,6 +6,15 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        reveal: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        reveal: 'reveal 1s ease-out',
+      },
       colors: {
         'custom-purple': '#2f27ce',
         'custom-green': '#8a2be2',

@@ -18,7 +18,7 @@ const Home = () => {
 
      <section className="bg-white dark:bg-gray-900">
     <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#ABDCFF] via-[#0396FF] to-[#0396FF] md:text-5xl lg:text-6xl dark:text-white">Welcome to NEST : Redefining Online Rentals</h1>
+        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#ABDCFF] via-[#0396FF] to-[#0396FF] md:text-5xl lg:text-6xl dark:text-white animate-reveal">Welcome to NEST : Redefining Online Rentals</h1>
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Your one-stop platform for finding the perfect rental property. Discover affordable housing, prime locations, and quality infrastructure—all in one place.
 
 
