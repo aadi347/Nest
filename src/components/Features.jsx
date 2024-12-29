@@ -1,64 +1,89 @@
-
-import React from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import PrimeLocation from "../assets/icons/location.png"
-import QualityInfrastructure from "../assets/icons/quality.png"
-import AffordableHousing from "../assets/icons/affordable.png"
-
-const features = [
-  {
-    title: "Affordable Housing",
-    description: "Quality housing solutions at affordable prices, tailored to meet your needs.",
-    iconColor: "",
-    iconSvg: (
-        <img src={AffordableHousing} className='w-8 h-8'></img>
-    ),
-  },
-  {
-    title: "Prime Locations",
-    description: "Find properties in the best locations to ensure a convenient lifestyle.",
-    iconColor: "",
-    iconSvg: (
-        <img src={PrimeLocation} className='w-8 h-8'></img>
-    ),
-  },
-  {
-    title: "Quality Infrastructure",
-    description: "Built with top-notch materials to ensure durability and safety.",
-    iconColor: "",
-    iconSvg: (
-        <img src={QualityInfrastructure} className='w-8 h-8'></img>
-    ),
-  },
-];
+import React from 'react'
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import affordable from '../assets/loan.png'
+import privacy from '../assets/privacy.png'
+import multipleOption from '../assets/geometry.png'
+import detail from '../assets/search-file.png'
+import support from '../assets/customer-service.png'
 
 const Features = () => {
-  return (
-    <section className="">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-center bg-gradient-to-r from-custom-green to-custom-purple bg-clip-text text-transparent sm:text-4xl">Our Key Features</h2>
-        <p className="mt-4 text-center text-lg text-gray-600">
-          Discover the unique benefits that set us apart from the rest.
-        </p>
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Animation duration in milliseconds
+      delay: 200, // Delay before the animation starts
+      once: true, // Animation happens only once
+      offset: 100, // Animate only once
+    });
+  }, []);
 
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center p-8 bg-white shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
-            >
-              <div className={`flex items-center justify-center h-16 w-16 ${feature.iconColor} rounded-full mb-4`}>
-                {feature.iconSvg}
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800">{feature.title}</h3>
-              <p className="mt-2 text-center text-gray-600">{feature.description}</p>
-            </div>
-          ))}
+  return (
+    <div className='h-screen flex flex-col justify-center items-center relative top-10'> 
+       <h2 className="text-3xl font-extrabold text-center bg-gradient-to-r from-custom-green to-custom-purple bg-clip-text text-transparent sm:text-4xl">Features that impresses</h2>
+      <div className="m-5 grid gap-4 :grid-cols-12 ">
+        <div
+          className="bg-white shadow-xl col-span-2 h-36 w-36 rounded-3xl border relative overflow-hidden group"
+          data-aos="fade-up"
+        >
+          <div className="flex justify-center items-center h-full group-hover:translate-y-[-20px] transition-transform duration-300">
+            <img src={affordable} alt="Affordable Housing" className="size-12" />
+          </div>
+          <h1 className="text-sm font-bold absolute bottom-4 left-7 right-0 transform translate-y-full opacity-0 p-2 transition-opacity duration-300 px-2 py-2 text-gray-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+            Affordable Housing
+          </h1>
+        </div>
+
+        <div
+          className="bg-white shadow-xl col-span-2 h-36 w-36 rounded-3xl border relative overflow-hidden group"
+          data-aos="fade-left"
+        >
+          <div className="flex justify-center items-center h-full group-hover:translate-y-[-20px] transition-transform duration-300">
+            <img src={support} alt="Customer Support" className="size-12" />
+          </div>
+          <p className="text-sm font-bold absolute bottom-4 left-6 right-0 transform translate-y-full opacity-0 p-2 transition-opacity duration-300 text-gray-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+            Customer Support
+          </p>
+        </div>
+
+        <div
+          className="bg-white shadow-xl col-span-2 h-36 w-36 row-start-2 border rounded-3xl self-start relative overflow-hidden group"
+          data-aos="fade-right"
+        >
+          <div className="flex justify-center items-center h-full group-hover:translate-y-[-20px] transition-transform duration-300">
+            <img src={privacy} alt="Privacy Protection" className="size-12" />
+          </div>
+          <p className="text-sm font-bold absolute bottom-4 left-7 right-0 transform translate-y-full opacity-0 p-2 transition-opacity duration-300 text-gray-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+            Privacy Protection
+          </p>
+        </div>
+
+        <div
+          className="bg-white shadow-xl col-span-2 h-36 w-36 rounded-3xl border row-start-2 self-start relative overflow-hidden group"
+          data-aos="fade-down"
+        >
+          <div className="flex justify-center items-center h-full group-hover:translate-y-[-20px] transition-transform duration-300">
+            <img src={multipleOption} alt="Multiple Options" className="size-12" />
+          </div>
+          <p className="text-sm font-bold absolute bottom-4 left-10 right-0 transform translate-y-full opacity-0 p-2 transition-opacity duration-300 text-gray-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+            Multiple Options
+          </p>
+        </div>
+
+        <div
+          className="bg-white shadow-xl col-span-4 row-start-3 rounded-3xl h-16 border w-full self-start relative overflow-hidden group"
+          data-aos="flip-left"
+        >
+          <div className="flex justify-center items-center h-full group-hover:translate-x-[50px] transition-transform duration-300">
+            <img src={detail} alt="Detailed Information" className="size-12" />
+          </div>
+          <p className="text-sm font-bold absolute bottom-4 left-7 right-0 transform translate-y-full opacity-0 p-2 transition-opacity text-gray-500 duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+            Detailed Information
+          </p>
         </div>
       </div>
-    </section>
+    </div>
   );
-};
+}
 
 export default Features;

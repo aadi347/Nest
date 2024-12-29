@@ -8,10 +8,11 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import Sitemap from './pages/Sitemap';
 import ContactUs from './pages/ContactUs';
 import SignUp from './pages/SignUp';
-import FlatRegistrationForm from './pages/FlatRegistrationForm';
-import Dashboard from './dashboard/Dashboard';
-import PropertyManagment from './dashboard/PropertyManagment';
+// import FlatRegistrationForm from './pages/FlatRegistrationForm';
+// import Dashboard from './dashboard/Dashboard';
+// import PropertyManagment from './dashboard/PropertyManagment';
 import AboutUs from './pages/AboutUs';
+// import addFlat from './dashboard/addFlat';
 
 
 const App = () => {
@@ -25,10 +26,11 @@ const App = () => {
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/flatregistrationform" element={<FlatRegistrationForm />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/PropertyManagment" element={<PropertyManagment />} />
+        {/* <Route path="/flatregistrationform" element={<FlatRegistrationForm />} />
+        <Route path="/dashboard" element={<Dashboard />} /> */}
+        {/* <Route path="/PropertyManagment" element={<PropertyManagment />} /> */}
         <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/addFlat" element={<addFlat />} />
       </Routes>
       <Footer />
     </Router>

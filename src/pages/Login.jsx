@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Illustartion from "../assets/icons/Tablet login-bro.svg"
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -43,14 +44,14 @@ const Login = () => {
       className="relative flex items-center justify-center h-screen bg-cover bg-center"
       style={{
         backgroundImage:
-          "url(https://img.freepik.com/free-vector/flat-design-lake-scenery_23-2149161406.jpg?t=st=1731820987~exp=1731824587~hmac=11bb8cb1986f044c7cd5bb052906e59b527b08e313244b0df4ca9e0760014ff4&w=1480)",
+          "url(	https://cdn.svgator.com/images/2022/06/animated-svg-background-example.svg)",
       }}
     >
       <div className="absolute inset-0 bg-black opacity-30"></div>
       <div className="relative flex max-w-4xl w-full mx-4 md:mx-0 bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden">
-        <div className="hidden md:flex md:w-1/2 lg:w-2/5 p-6 items-center justify-center">
+        <div className="hidden md:flex md:w-1/2 lg:w-2/5 p-6 items-center justify-center border rounded-lg bg-white ">
           <img
-            src="/path/to/your/illustration.png"
+            src={Illustartion}
             alt="Illustration"
             className="w-full h-auto object-cover"
           />

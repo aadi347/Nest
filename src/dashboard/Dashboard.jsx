@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import PropertyManagement from "./PropertyManagment.jsx";
+import PropertyManagement from './PropertyManagement.jsx';
 import ProfileSettings from "./ProfileSettings.jsx";
 import SupportAndResources from "./SupportAndResources.jsx";
+import AddProperty from './addFlat.jsx';
 
 const Dashboard = () => {
   // State to track which section is active
@@ -17,6 +18,8 @@ const Dashboard = () => {
         return <ProfileSettings />;
       case 'SupportAndResources':
         return <SupportAndResources />;
+      case 'AddProperty':
+      return <AddProperty />;
       default:
         return <PropertyManagement />;
     }
@@ -25,8 +28,8 @@ const Dashboard = () => {
   return (
     <div className="flex h-screen bg-slate-50">
       {/* Sidebar */}
-      <div className="w-1/4 bg-white border border-gray-200 rounded-3xl m-6 p-6">
-        <h2 className="text-2xl font-bold mb-6 border-b">Dashboard</h2>
+      <div className="w-1/4 bg-white rounded-3xl shadow-custom-heavy m-6 p-6">
+        <h2 className="text-2xl font-bold mb-6">Dashboard</h2>
         <ul className="space-y-4">
           <li>
             <button 
@@ -52,11 +55,19 @@ const Dashboard = () => {
               Support and Resources
             </button>
           </li>
+          <li>
+            <button 
+              className={`w-full text-left p-2 rounded-3xl ${activeSection === 'AddProperty' ? 'bg-gradient-to-r from-custom-green to-custom-purple text-white' : ''}`}
+              onClick={() => setActiveSection('AddProperty')}
+            >
+              AddProperty
+            </button>
+          </li>
         </ul>
       </div>
 
       {/* Right Content Section */}
-      <div className="flex-1 bg-white rounded-3xl border border-gray-200  m-6 p-8">
+      <div className="flex-1 bg-white rounded-3xl shadow-custom-heavy m-6 p-8">
         {renderSection()}
       </div>
     </div>

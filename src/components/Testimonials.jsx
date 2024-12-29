@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
 
 const testimonials = [
   {
     id: 1,
-    name: "John Doe", 
+    name: "John Doe",
     position: "CEO, Example Corp",
     testimonial: "This service has transformed our business. Their attention to detail and commitment to excellence is unparalleled.",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
@@ -26,25 +28,45 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Animation duration in milliseconds
+      delay: 200, // Delay before the animation starts
+      once: true, // Animation happens only once
+      offset: 100, // Offset to trigger animation
+    });
+  }, []);
+
   return (
-    <section className="bg-gray-50 py-16" 
-    
-    style={{
-    
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat'
-    }}>
+    <section className=" py-16"
+      style={{
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-center bg-gradient-to-r from-custom-green to-custom-purple bg-clip-text text-transparent sm:text-4xl">What Our Clients Say</h2>
-        <p className="mt-4 text-center text-lg text-gray-600">Hear from our satisfied clients who trust us with their projects.</p>
+        <h2
+          className="text-3xl font-extrabold text-center bg-gradient-to-r from-custom-green to-custom-purple bg-clip-text text-transparent sm:text-4xl"
+          data-aos="fade-up"
+        >
+          What Our Clients Say
+        </h2>
+        <p
+          className="mt-4 text-center text-lg text-gray-600"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Hear from our satisfied clients who trust us with their projects.
+        </p>
 
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((testimonial) => (
+          {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className="flex flex-col items-center bg-white p-8 shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
-              
+              className="flex flex-col items-center bg-white p-8 shadow-lg rounded-3xl hover:shadow-2xl transition-shadow duration-300 ease-in-out"
+              data-aos="zoom-in"
+              data-aos-delay={index * 150} // Delay increases with each card
             >
               <img
                 className="h-16 w-16 rounded-full mb-4 border-4 border-indigo-600"

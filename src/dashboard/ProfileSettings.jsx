@@ -1,5 +1,4 @@
 import React from "react";
-
 import Cropper from "./Cropper";
 
 const ProfileSettings = () => {
