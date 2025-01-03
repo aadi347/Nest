@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
-import LandAreaIcon from "../assets/icons/land_area.png"
-import LocationArea from "../assets/icons/location_area.png"
 
 const listings = [
   {
@@ -35,17 +35,39 @@ const listings = [
 ];
 
 const PropertyListings = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      delay: 200, // Delay between elements
+      easing: 'ease-in-out', // Animation easing style
+      offset: 120, // Offset from top to start animation
+    });
+  }, []);
+
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-center text-gray-800 sm:text-4xl">Featured Listings</h2>
-        <p className="mt-4 text-center text-lg text-gray-600">Discover properties that fit your lifestyle and needs.</p>
-        
+        <h2
+          className="text-3xl font-extrabold text-center text-gray-800 sm:text-4xl"
+          data-aos="fade-up"
+        >
+          Featured Listings
+        </h2>
+        <p
+          className="mt-4 text-center text-lg text-gray-600"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Discover properties that fit your lifestyle and needs.
+        </p>
+
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {listings.map((listing) => (
+          {listings.map((listing, index) => (
             <div
               key={listing.id}
               className="flex flex-col p-6 bg-white shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
+              data-aos="fade-right"
+              data-aos-delay={index * 150} // Delay increases with each card
             >
               <img
                 src={listing.imageUrl}

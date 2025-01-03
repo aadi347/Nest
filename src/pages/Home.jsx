@@ -5,7 +5,7 @@ import { FaMapMarkerAlt, FaHome, FaDollarSign } from 'react-icons/fa';
 import SearchBar from '../components/searchBar';
 // import Features from '../components/FeatureSection16 ';
 import Testimonials from '../components/Testimonials';
-// import PropertyListings from '../components/PropertyListings';
+import PropertyListings from '../components/PropertyListings';
 // import AboutUs from '../components/AboutUs';
 // import ContactNewsletter from '../components/ContactNewsletter';
 // import Dashboard from '../dashboard/Dashboard';
@@ -42,9 +42,9 @@ const Home = () => {
         <div>
           <Testimonials />
         </div>
-        {/* <div>
+         <div>
         <PropertyListings/>
-        </div> */}
+        </div> 
         
        
 
