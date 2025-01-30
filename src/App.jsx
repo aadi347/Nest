@@ -12,18 +12,19 @@ import FlatRegistrationForm from './pages/FlatRegistrationForm';
 import Dashboard from './dashboard/Dashboard';
 import AboutUs from './pages/AboutUs';
 import Account from './pages/Account';
+import Blog  from './pages/Blog';
 // import addFlat from './dashboard/addFlat';
 
 const App = () => {
   const location = useLocation();
 
-  // Specify the paths where the Navbar should not be displayed
+
   const hideNavbarPaths = ['/dashboard'];
   const hideFooterPaths = ['/dashboard'];
 
   return (
     <>
-      {/* Conditionally render Navbar */}
+ 
       {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -36,8 +37,8 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
-      {/* Conditionally render Footer */}
       {!hideFooterPaths.includes(location.pathname) && <Footer />}
     </>
   );
