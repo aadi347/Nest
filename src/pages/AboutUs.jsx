@@ -5,7 +5,7 @@ import Illustration from "../assets/icons/illustartion.jpg";
 const AboutUs = () => {
   return (
     <div
-      className="bg-white max-w-7xl mx-auto px-6 lg:px-8 shadow-lg hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-100"
+      className="bg-white max-w-7xl mx-auto px-6 lg:px-8 border hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-100"
       style={{ width: '1212px', height: '611px', borderRadius: '50px' }}
     >
       {/* Content Wrapper */}

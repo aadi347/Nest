@@ -54,51 +54,59 @@ const PropertyManagement = () => {
 
 
   return (
-    <div className="p-6">
+   
+  
+
+ 
+<div className="p-6">
   <h1 className="text-3xl font-bold mb-6 text-center">Property Management</h1>
 
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {flats.map((flat) => (
-      <div key={flat._id} className="bg-white shadow-xl rounded-3xl overflow-hidden">
+      <div key={flat._id} className="bg-white rounded-lg border overflow-hidden">
         <img 
           src={flat.imageURL || 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJlYXV0aWZ1bCUyMGhvdXNlfGVufDB8fDB8fHww'} // Replace with dynamic image URL or default
           alt={flat.houseName} 
           className="w-full h-40 object-cover"
         />
         <div className="p-4">
-          <h2 className="text-xl font-semibold mb-2 flex items-center">
-            <FaHome className="text-custom-purple mr-2" /> {flat.houseName}
+          <h2 className="text-xl font-semibold mb-2 flex items-center border-b py-2">
+             {flat.houseName}
           </h2>
-          <p className="text-gray-700 flex items-center">
-            <FaMapMarkerAlt className="text-custom-green mr-2" /> Location: {flat.location}
-          </p>
-          <p className="text-gray-700 flex items-center">
-            <FaRupeeSign className="text-custom-green mr-2" /> Rent: ₹{flat.rent}
-          </p>
-          <p className="text-gray-700 flex items-center">
-            <FaParking className="text-custom-green mr-2" /> Parking: {flat.parking}
-          </p>
-          <p className="text-gray-700 flex items-center">
-            <FaBolt className="text-custom-green mr-2" /> Utilities: {flat.utilities}
-          </p>
-          <p className="text-gray-700 flex items-center">
-            <MdOutlineBedroomParent className="text-custom-green mr-2" /> Flat Type: {flat.flatType}
-          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <span className="text-gray-700 flex items-center bg-custom-green text-white px-3 py-1 rounded-full">
+              <FaMapMarkerAlt className="mr-2" /> {flat.location}
+            </span>
+            <span className="text-gray-700 flex items-center bg-custom-green text-white px-3 py-1 rounded-full">
+              <FaRupeeSign className="mr-2" /> ₹{flat.rent}
+            </span>
+            <span className="text-gray-700 flex items-center bg-custom-green text-white px-3 py-1 rounded-full">
+              <MdOutlineBedroomParent className="mr-2" /> {flat.flatType}
+            </span>
+            <span className="text-gray-700 flex items-center bg-custom-green text-white px-3 py-1 rounded-full">
+              <FaBolt className="mr-2" /> {flat.utilities}
+            </span>
+            <span className="text-gray-700 flex items-center bg-custom-green text-white px-3 py-1 rounded-full">
+              <FaParking className="mr-2 text-xl" /> {flat.parking}
+            </span>
+          </div>
+
           <div className="mt-4 flex justify-between">
-          <button className="flex items-center bg-custom-purple text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">
+            <button className="flex items-center border text-black px-4 py-2 rounded-lg hover:bg-blue-700 transition">
               <FaEdit className="" />
+              Edit
             </button>
-            <button className="flex items-center bg-custom-green text-white px-4 py-2 rounded-full hover:bg-red-700 transition">
+            <button className="flex items-center bg-custom-green text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">
               <FaTrash className="" />
+              Delete
             </button>
           </div>
         </div>
       </div>
     ))}
   </div>
-
- 
 </div>
+
   );
 };
 

@@ -47,7 +47,7 @@ const SignUp = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="w-[90%] max-w-4xl h-auto rounded-3xl flex overflow-hidden shadow-xl bg-white">
+      <div className="w-[90%] max-w-4xl h-auto rounded-3xl flex overflow-hidden border bg-white">
         {/* Left Section */}
         <div className="w-1/2 bg-gradient-to-r from-custom-green to-custom-purple flex justify-center items-center text-white p-8">
           <h1 className="text-5xl font-bold">Welcome to NEST!</h1>
@@ -57,7 +57,7 @@ const SignUp = () => {
         <div className="w-1/2 flex justify-center items-center p-8">
           <div className="w-full max-w-md">
             <h2 className="text-3xl font-semibold text-custom-purple mb-8 text-center">Sign Up</h2>
-            <p className="font-semibold text-gray-300 mb-8 text-center">Create an account to start using NEST Property Listing Service</p>
+            <p className="font-semibold text-gray-300 mb-8 text-center border-b">Create an account to start using NEST Property Listing Service</p>
             <form onSubmit={handleSignup} className="space-y-5">
               {/* Name */}
               <input
@@ -117,7 +117,7 @@ const SignUp = () => {
               >
                 {loading ? "Signing Up..." : "Sign Up"}
               </button>
-              <p  className="text-1xl font-semibold text-custom-purple mb-8 text-center">or</p>
+              <p  className="text-1xl font-semibold text-custom-purple mb-8 text-center border-b">or</p>
             
             </form>
           </div>
