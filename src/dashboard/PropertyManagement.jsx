@@ -56,56 +56,61 @@ const PropertyManagement = () => {
   return (
    
   
+    <div className="flex bg-white rounded-xl shadow-md overflow-hidden border p-4 w-full max-w-3xl">
+      {/* Property Image */}
+      <img
+        src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?fm=jpg&q=60&w=3000" // Replace with the actual property image URL
+        // alt={property.name}
+        className="w-40 h-40 object-cover rounded-lg"
+      />
 
- 
-<div className="p-6">
-  <h1 className="text-3xl font-bold mb-6 text-center">Property Management</h1>
+      {/* Property Details */}
+      <div className="flex flex-col justify-between p-4 flex-grow">
+        <h2 className="text-xl font-semibold text-gray-800">{flats.name}</h2>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {flats.map((flat) => (
-      <div key={flat._id} className="bg-white rounded-lg border overflow-hidden">
-        <img 
-          src={flat.imageURL || 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJlYXV0aWZ1bCUyMGhvdXNlfGVufDB8fDB8fHww'} // Replace with dynamic image URL or default
-          alt={flat.houseName} 
-          className="w-full h-40 object-cover"
-        />
-        <div className="p-4">
-          <h2 className="text-xl font-semibold mb-2 flex items-center border-b py-2">
-             {flat.houseName}
-          </h2>
-          <div className="grid grid-cols-2 gap-4">
-            <span className="text-gray-700 flex items-center bg-custom-green text-white px-3 py-1 rounded-full">
-              <FaMapMarkerAlt className="mr-2" /> {flat.location}
-            </span>
-            <span className="text-gray-700 flex items-center bg-custom-green text-white px-3 py-1 rounded-full">
-              <FaRupeeSign className="mr-2" /> ₹{flat.rent}
-            </span>
-            <span className="text-gray-700 flex items-center bg-custom-green text-white px-3 py-1 rounded-full">
-              <MdOutlineBedroomParent className="mr-2" /> {flat.flatType}
-            </span>
-            <span className="text-gray-700 flex items-center bg-custom-green text-white px-3 py-1 rounded-full">
-              <FaBolt className="mr-2" /> {flat.utilities}
-            </span>
-            <span className="text-gray-700 flex items-center bg-custom-green text-white px-3 py-1 rounded-full">
-              <FaParking className="mr-2 text-xl" /> {flat.parking}
-            </span>
-          </div>
-
-          <div className="mt-4 flex justify-between">
-            <button className="flex items-center border text-black px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-              <FaEdit className="" />
-              Edit
-            </button>
-            <button className="flex items-center bg-custom-green text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">
-              <FaTrash className="" />
-              Delete
-            </button>
-          </div>
+        <div className="text-sm text-gray-600 space-y-1">
+          <p>
+            <span className="font-semibold">Rent:</span> {flats.rent} per month
+          </p>
+          <p>
+            <span className="font-semibold">Deposit:</span> {flats.deposit}
+          </p>
+          <p>
+            <span className="font-semibold">Current Status:</span> {flats.status}
+          </p>
+          <p className="flex items-center">
+            <FaMapMarkerAlt className="mr-2 text-purple-500" />
+            {flats.location}
+          </p>
         </div>
       </div>
-    ))}
-  </div>
-</div>
+
+      {/* Right-side Details */}
+      <div className="flex flex-col justify-between p-4 border-l">
+        <p className="text-lg font-semibold">{flats.flatType}</p>
+        <p className="text-sm">
+          <span className="font-semibold">Parking:</span> {flats.parking}
+        </p>
+        <p className="text-sm font-semibold">
+          {flats.wheeler}
+        </p>
+
+        {/* Buttons */}
+        <div className="flex space-x-2 mt-4">
+          <button className="bg-purple-500 text-white px-4 py-2 rounded-md">
+            Edit
+          </button>
+          <button className="bg-purple-600 text-white px-4 py-2 rounded-md">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+ 
+
+    
+
+
 
   );
 };

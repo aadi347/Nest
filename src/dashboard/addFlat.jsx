@@ -11,6 +11,7 @@ const AddProperty = () => {
   const [houseName, setHouseName] = useState("");
   const [deposit, setDeposit] = useState("");
   const [carpetArea, setCarpetArea] = useState("");
+  const [image, setImage] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,12 +24,13 @@ const AddProperty = () => {
       houseName,
       deposit,
       carpetArea,
+      image,
     };
 
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:3000/flatregistration", // Corrected the typo in endpoint name
+        "http://localhost:3000/flatregistration",
         data
       );
       setLoading(false);
@@ -42,149 +44,93 @@ const AddProperty = () => {
   };
 
   return (
-    <div className="flex-1 bg-white rounded-3xl m-6 p-8 relative bottom-7">
-      <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-6">
-        <h2 className="col-span-2 text-3xl font-bold text-center mb-6 text-indigo-600">
-          Flat Registration Form
-        </h2>
+    <div className="flex-1 bg-white rounded-3xl p-6">
+      <h1 className="text-2xl font-semibold text-left mb-6 border-b py-4 bg-slate-50 rounded-md">Add Property</h1>
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-        {/* Flat Type */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Flat Type <span className="text-red-500">*</span>
-          </label>
-          <select
-            value={flatType}
-            onChange={(e) => setFlatType(e.target.value)}
-            className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-            required
-          >
-            <option value="" disabled>Select Flat Type</option>
+        <label className="block text-sm/6 font-medium text-gray-900">House Name
+            <input placeholder="Enter Your House Name" 
+            type="text" 
+            value={houseName} 
+            onChange={(e) => setHouseName(e.target.value)} 
+            className="p-2 border rounded w-full" 
+            required />
+        </label>
+
+        <label className="block text-sm/6 font-medium text-gray-900">Flat Type
+          <select value={flatType} onChange={(e) => setFlatType(e.target.value)} className="p-2 border rounded w-full" required>
+            <option value="">Select Flat Type</option>
             <option value="1 BHK">1 BHK</option>
             <option value="2 BHK">2 BHK</option>
             <option value="3 BHK">3 BHK</option>
             <option value="4 BHK">4 BHK</option>
           </select>
-        </div>
+        </label>
 
-        {/* Flat Rent */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Flat Rent (₹) <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="number"
-            value={rent}
-            onChange={(e) => setRent(e.target.value)}
-            className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-            placeholder="Enter Rent"
-            required
-          />
-        </div>
+        <label className="block text-sm/6 font-medium text-gray-900">Rent
+          <input placeholder="Enter Your Rent Here" 
+               type="number" 
+               value={rent} 
+               onChange={(e) => 
+               setRent(e.target.value)} 
+               className="p-2 border rounded w-full" 
+               required />
+        </label>
 
-        {/* Flat Location */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Flat Location <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-            placeholder="Enter Location"
-            required
-          />
-        </div>
+        <label className="block text-sm/6 font-medium text-gray-900">Location
+              <input
+              placeholder="Enter Your Rent Here" 
+              type="text" 
+              value={location} onChange={(e) => setLocation(e.target.value)} 
+              className="p-2 border rounded w-full" 
+              required />
+        </label>
 
-        {/* Parking */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Parking <span className="text-red-500">*</span>
-          </label>
-          <select
-            value={parking}
-            onChange={(e) => setParking(e.target.value)}
-            className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-            required
-          >
-            <option value="" disabled>Select Parking Type</option>
+        <label className="block text-sm/6 font-medium text-gray-900">Parking
+          <select value={parking} onChange={(e) => setParking(e.target.value)} className="p-2 border rounded w-full" required>
+            <option value="">Select Parking Type</option>
             <option value="2-wheeler Shaded">2-wheeler Shaded</option>
             <option value="2-wheeler Not Shaded">2-wheeler Not Shaded</option>
             <option value="4-wheeler Shaded">4-wheeler Shaded</option>
             <option value="4-wheeler Not Shaded">4-wheeler Not Shaded</option>
+            <option value="Both Shaded for 2 & 4 Wheeler">Both Shaded for 2 & 4 Wheeler</option>
+            <option value="Not Available">Not Available</option>
           </select>
-        </div>
+        </label>
 
-        {/* Utilities */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Electricity & Water Supply <span className="text-red-500">*</span>
-          </label>
-          <select
-            value={utilities}
-            onChange={(e) => setUtilities(e.target.value)}
-            className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-            required
-          >
-            <option value="" disabled>Select Status</option>
-            <option value="24/7">24/7</option>
-            <option value="Limited Hours">Limited Hours</option>
-          </select>
-        </div>
+        <label className="block text-sm/6 font-medium text-gray-900">Utilities
+              <input placeholder="Enter Your Rent Here" 
+              type="text" value={utilities} onChange={(e) => setUtilities(e.target.value)} 
+              className="p-2 border rounded w-full" 
+              required />
+        </label>
 
-        {/* House Name */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            House Name
-          </label>
-          <input
-            type="text"
-            value={houseName}
-            onChange={(e) => setHouseName(e.target.value)}
-            className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-            placeholder="Enter House Name"
-          />
-        </div>
+        <label className="block text-sm/6 font-medium text-gray-900">Deposit
+              <input placeholder="Enter Your Rent Here" 
+              type="number" value={deposit} onChange={(e) => setDeposit(e.target.value)} 
+              className="p-2 border rounded w-full" 
+              required />
+        </label>
 
-        {/* Deposit */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Deposit (₹)
-          </label>
-          <input
-            type="number"
-            value={deposit}
-            onChange={(e) => setDeposit(e.target.value)}
-            className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-            placeholder="Enter Deposit Amount"
-          />
-        </div>
+        <label className="block text-sm/6 font-medium text-gray-900">Carpet Area
+              <input placeholder="Enter Your Rent Here" 
+              type="text" value={carpetArea} onChange={(e) => setCarpetArea(e.target.value)} 
+              className="p-2 border rounded w-full" 
+              required />
+        </label>
 
-        {/* Carpet Area */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Carpet Area (sq ft)
-          </label>
-          <input
-            type="number"
-            value={carpetArea}
-            onChange={(e) => setCarpetArea(e.target.value)}
-            className="mt-1 block w-full p-3 border rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-            placeholder="Enter Carpet Area"
-          />
-        </div>
+        <label className="block text-sm/6 font-medium text-gray-900">Image Upload <span className="text-gray-500 text-xs">(Upload a photo of your property)</span><br />
+          <input type="file" onChange={(e) => setImage(e.target.files[0])} className="hidden" />
+          <div className="border p-2 rounded cursor-pointer text-center bg-gray-100 hover:bg-gray-200">Choose File</div>
+        </label>
 
-        {/* Submit Button */}
-        <div className="col-span-2 mt-6 flex justify-center">
-          <button
-            type="submit"
-            disabled={loading}
-            className="bg-indigo-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-indigo-500 transition duration-200"
-          >
-            {loading ? "Submitting..." : "Submit"}
+        <div className="col-span-2 md:col-span-2 flex justify-between">
+          <button type="button" className=" border text-black p-2 rounded-md hover:text-white hover:bg-gray-600">Cancel</button>
+          <button type="submit" className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+            {loading ? "Submitting..." : "Submit Property"}
           </button>
         </div>
+
       </form>
     </div>
   );

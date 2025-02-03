@@ -40,7 +40,7 @@ const Dashboard = () => {
         <div className="flex items-center space-x-4 ">
           {/* User Photo */}
           <img
-            src="https://play-lh.googleusercontent.com/7Ak4Ye7wNUtheIvSKnVgGL_OIZWjGPZNV6TP_3XLxHC-sDHLSE45aDg41dFNmL5COA" // Replace with the actual user photo URL
+            src="https://play-lh.googleusercontent.com/hJGHtbYSQ0nCnoEsK6AGojonjELeAh_Huxg361mVrPmzdwm8Ots-JzEH5488IS2nojI" // Replace with the actual user photo URL
             alt="User"
             className="w-10 h-10 rounded-full"
           />
