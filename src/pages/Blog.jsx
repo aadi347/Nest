@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { FiUpload } from "react-icons/fi";
 import { MdEdit, MdOutlineAddCircleOutline, MdDelete } from "react-icons/md";
 
@@ -17,8 +18,25 @@ const Blog = () => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
       };
-    
-      // Handle image upload
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        const data = new FormData();
+        data.append("title", formData.title);
+        data.append("category", formData.category);
+        data.append("content", formData.content);
+     
+        try {
+          const response = await axios.post("http:/localhost:3000/blog", data);
+          console.log(response.data);
+          alert("Blog added successfully!");
+          setFormData({ title: "", category: "", content: "", image: null });
+        } catch (error) {
+          console.error(error.response?.data || error.message);
+          alert("An error occurred while adding the blog. Please check the console.");
+        }
+      }
+
       const handleImageUpload = (e) => {
         setFormData({ ...formData, image: e.target.files[0] });
       }; 
@@ -65,8 +83,8 @@ const Blog = () => {
     <div className="flex flex-col gap-3 md:col-span-1">
     <h2 className="text-3xl font-bold text-gray-900">The Future of Technology</h2>
     <p className="text-sm text-gray-600">Published on: Jan 30, 2025</p>
-    <span className="bg-blue-600 text-white px-4 py-2 rounded-full w-fit text-sm font-semibold">
-      Category: Innovation
+    <span className="border text-blue-500 px-2 py-2 rounded-full w-fit text-xs font-semibold">
+      Innovation
     </span>
     <p className="text-gray-800 text-sm leading-relaxed">
       Technology is evolving at an unprecedented pace, shaping the way we live, work, and interact with the world.
@@ -90,8 +108,8 @@ const Blog = () => {
         ></span>
         <span
         className="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10"
-        >Explore!</span
-        >
+        >Read More</span>
+        
         </button>
 
     {addBlog && (
@@ -99,9 +117,9 @@ const Blog = () => {
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
             <h2 className="text-2xl font-bold mb-4 text-center">Add New Blog</h2>
             
-            {/* Blog Form */}
-            <form className="flex flex-col gap-4">
-              {/* Title Input */}
+     
+            <form className="flex flex-col gap-4 ">
+
               <input
                 type="text"
                 name="title"
@@ -112,7 +130,7 @@ const Blog = () => {
                 required
               />
 
-              {/* Category Input */}
+          
               <input
                 type="text"
                 name="category"
@@ -123,7 +141,7 @@ const Blog = () => {
                 required
               />
 
-              {/* Content Textarea */}
+             
               <textarea
                 name="content"
                 placeholder="Write your blog content here..."
@@ -134,30 +152,35 @@ const Blog = () => {
                 required
               ></textarea>
 
-              {/* Upload Box */}
+             
               <label className="flex items-center justify-center gap-3 p-4 border-2 border-dashed border-gray-400 rounded-md cursor-pointer hover:border-blue-400">
                 <FiUpload className="text-gray-500 text-2xl" />
                 <span className="text-gray-600">{formData.image ? formData.image.name : "Upload Image"}</span>
                 <input type="file" name="image" className="hidden" onChange={handleImageUpload} />
               </label>
 
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 cursor-pointer z-10 group"
-                >
-                Submit Blog
-                
-              </button>
-            </form>
 
-            {/* Close Button */}
-            <button
+              <div className='grid grid-cols-2 gap-4'>
+              <button
               onClick={() => setaddBlog(false)}
-              className="mt-4 w-full py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+              className="mt-4 w-full py-2 border text-black rounded-md hover:bg-red-200"
             >
               Close
             </button>
+            <button
+                onClick={handleSubmit}
+                type="submit"
+                className="mt-4 w-full py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+                >
+                Submit
+                
+              </button>
+
+            </div>
+            </form>
+
+      
+            
           </div>
         </div>
       )}

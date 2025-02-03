@@ -5,10 +5,15 @@ import ProfileSettings from "./ProfileSettings.jsx";
 import SupportAndResources from "./SupportAndResources.jsx";
 import AddProperty from './addFlat.jsx';
 import { FaHouse } from "react-icons/fa6";
+import { IoMdLogOut,IoMdContact } from "react-icons/io";
+import { GoHomeFill } from "react-icons/go";
+import LogoutDialog from '/Users/adityakumar/Desktop/Folder/Nest/frontend/src/components/LogoutDialog.jsx';
+
 
 const Dashboard = () => {
   // State to track which section is active
   const [activeSection, setActiveSection] = useState('PropertyManagement');
+  const [open, setOpen] = useState(false);
 
   // Function to render the active section
   const renderSection = () => {
@@ -25,6 +30,8 @@ const Dashboard = () => {
         return <PropertyManagement />;
     }
   };
+   
+  
 
   return (
     <div className="flex flex-col h-screen bg-slate-50">
@@ -46,13 +53,24 @@ const Dashboard = () => {
             <i className="fas fa-bell text-lg"></i>
           </button>
           {/* Home Button */}
-          <Link to="/" className="text-black hover:bg-gray-300 hover:text-white py-2 px-4 border rounded-full">
-            Home
-          </Link>
-          {/* Contact Us Button */}
-          <Link to="/contact" className="text-black hover:bg-gray-300 hover:text-white py-2 px-4 border rounded-full">
-            Contact Us
-          </Link>
+          <Link to="/" className="text-black hover:bg-gray-300 hover:text-white py-2 px-4 border rounded-full flex items-center gap-2">
+  <GoHomeFill />
+  Home
+</Link>
+
+{/* Contact Us Button */}
+<Link to="/contact" className="text-black hover:bg-gray-300 hover:text-white py-2 px-4 border rounded-full flex items-center gap-2">
+<IoMdContact />
+  Contact Us
+  
+</Link>
+
+<button onClick={() => setOpen(true)}  className="text-black hover:bg-gray-300 hover:text-white py-2 px-4 border rounded-full flex items-center gap-2">
+  <IoMdLogOut />
+  LogOut
+  <LogoutDialog open={open} setOpen={setOpen} />
+</button>
+
         </div>
       </div>
 

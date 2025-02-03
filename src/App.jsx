@@ -13,6 +13,7 @@ import Dashboard from './dashboard/Dashboard';
 import AboutUs from './pages/AboutUs';
 import Account from './pages/Account';
 import Blog  from './pages/Blog';
+import Demo from './pages/Demo';
 // import addFlat from './dashboard/addFlat';
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/account" element={<Account />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/demo" element={<Demo />} />
       </Routes>
       {!hideFooterPaths.includes(location.pathname) && <Footer />}
     </>
