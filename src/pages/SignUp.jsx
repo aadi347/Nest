@@ -14,19 +14,19 @@ const SignUp = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("email", email);
-    formData.append("password", password);
-    formData.append("dob", dob);
-    if (profileImage) {
-      formData.append("profileImage", profileImage);
+  
+    // Check if all required fields are filled
+    if (!name || !email || !password) {
+      alert("Name, email, and password are required");
+      return;
     }
-
+  
+    const userData = { name, email, password };
+  
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/signup", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
+      const res = await axios.post("http://localhost:3000/signup", userData, {
+        headers: { "Content-Type": "application/json" },
       });
       setLoading(false);
       alert("Signup successful!");

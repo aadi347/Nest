@@ -56,62 +56,48 @@ const PropertyManagement = () => {
   return (
    
   
-    <div className="flex bg-white rounded-xl shadow-md overflow-hidden border p-4 w-full max-w-3xl">
-      {/* Property Image */}
-      <img
-        src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?fm=jpg&q=60&w=3000" // Replace with the actual property image URL
-        // alt={property.name}
-        className="w-40 h-40 object-cover rounded-lg"
-      />
 
-      {/* Property Details */}
-      <div className="flex flex-col justify-between p-4 flex-grow">
-        <h2 className="text-xl font-semibold text-gray-800">{flats.name}</h2>
+ 
+<div className="flex-1 bg-white rounded-3xl p-6 h-screen overflow-y-auto">
+      <h1 className="text-2xl font-semibold text-left mb-6">Add Property</h1>
+      
+      <div className="grid grid-cols-1 gap-4">
+        {flats.map((flat) => (
+          <div key={flat._id} className="flex bg-white rounded-xl shadow-md overflow-hidden border p-4 w-full max-w-3xl">
+            <img
+              src={flat.imageURL || "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?fm=jpg&q=60&w=3000"}
+              alt={flat.houseName}
+              className="w-40 h-40 object-cover rounded-lg"
+            />
 
-        <div className="text-sm text-gray-600 space-y-1">
-          <p>
-            <span className="font-semibold">Rent:</span> {flats.rent} per month
-          </p>
-          <p>
-            <span className="font-semibold">Deposit:</span> {flats.deposit}
-          </p>
-          <p>
-            <span className="font-semibold">Current Status:</span> {flats.status}
-          </p>
-          <p className="flex items-center">
-            <FaMapMarkerAlt className="mr-2 text-purple-500" />
-            {flats.location}
-          </p>
-        </div>
-      </div>
+            <div className="flex flex-col justify-between p-4 flex-grow">
+              <h2 className="text-xl font-semibold text-gray-800">{flat.houseName}</h2>
 
-      {/* Right-side Details */}
-      <div className="flex flex-col justify-between p-4 border-l">
-        <p className="text-lg font-semibold">{flats.flatType}</p>
-        <p className="text-sm">
-          <span className="font-semibold">Parking:</span> {flats.parking}
-        </p>
-        <p className="text-sm font-semibold">
-          {flats.wheeler}
-        </p>
+              <div className="text-sm text-gray-600 space-y-1">
+                <p><span className="font-semibold">Rent:</span> {flat.rent} per month</p>
+                <p><span className="font-semibold">Deposit:</span> {flat.deposit}</p>
+                <p><span className="font-semibold">Current Status:</span> {flat.status}</p>
+                <p className="flex items-center">
+                  <FaMapMarkerAlt className="mr-2 text-purple-500" />
+                  {flat.location}
+                </p>
+              </div>
+            </div>
 
-        {/* Buttons */}
-        <div className="flex space-x-2 mt-4">
-          <button className="bg-purple-500 text-white px-4 py-2 rounded-md">
-            Edit
-          </button>
-          <button className="bg-purple-600 text-white px-4 py-2 rounded-md">
-            Delete
-          </button>
-        </div>
+            <div className="flex flex-col justify-between p-4 border-l">
+              <p className="text-lg font-semibold">{flat.flatType}</p>
+              <p className="text-sm"><span className="font-semibold">Parking:</span> {flat.parking}</p>
+              <p className="text-sm font-semibold">{flat.wheeler}</p>
+
+              <div className="flex space-x-2 mt-4">
+                <button className="bg-purple-500 text-white px-4 py-2 rounded-md">Edit</button>
+                <button className="bg-purple-600 text-white px-4 py-2 rounded-md">Delete</button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
- 
-
-    
-
-
-
   );
 };
 
