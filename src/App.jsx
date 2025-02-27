@@ -9,11 +9,11 @@ import Sitemap from './pages/Sitemap';
 import ContactUs from './pages/ContactUs';
 import SignUp from './pages/SignUp';
 import FlatRegistrationForm from './pages/FlatRegistrationForm';
-import Dashboard from './dashboard/Dashboard';
 import AboutUs from './pages/AboutUs';
 import Account from './pages/Account';
 import Blog  from './pages/Blog';
 import Demo from './pages/Demo';
+import Dashboard from './Dashboard/Dashboard';
 // import addFlat from './dashboard/addFlat';
 
 const App = () => {
