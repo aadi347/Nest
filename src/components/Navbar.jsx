@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import NestLogo from "../assets/icons/NestLogo.png";
+import NestLogo from "../assets/nest-protocol-nest-logo.png";
 import AboutUs from "../pages/AboutUs";
 
 const Navbar = () => {
@@ -14,10 +14,10 @@ const Navbar = () => {
   return (
     <nav
       className={`${
-        isScrolled ? "fixed top-0 w-full bg-white shadow z-50" : "relative"
-      } border-gray-200 dark:bg-gray-900 transition-all duration-300`}
+        isScrolled ? "fixed top-0 w-full py-5 bg-yellow-500 shadow z-50" : "relative"
+      } border-gray-200 py-3 dark:bg-gray-900 transition-all duration-300`}
     >
-      <div className="max-w-screen-xl  py-2 mt-4  border rounded-full flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl  py-2 mt-4  border bg-white rounded-full flex flex-wrap items-center justify-between mx-auto p-4">
         <a
           href="https://flowbite.com/"
           className="flex items-center space-x-3 rtl:space-x-reverse"

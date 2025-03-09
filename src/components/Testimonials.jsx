@@ -38,12 +38,8 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className=" py-16"
-      style={{
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
+    <section className="py-16 bg-slate-50 rounded-3xl"
+      
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2

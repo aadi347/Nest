@@ -10,7 +10,7 @@ import support from '../assets/customer-service.png'
 import { IoIosWallet, IoMdOptions } from "react-icons/io";
 import { RiCustomerServiceFill } from "react-icons/ri";
 import { AiFillHome } from "react-icons/ai";
-
+import MapDoodle from "../assets/map_doodle.webp"
 
 const Features = () => {
   useEffect(() => {
@@ -22,18 +22,20 @@ const Features = () => {
     });
   }, []);
 
+
+
   return (
-    <section className="py-44  dark:bg-gray-900">
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div  className='py-7'>
+    <section 
+        className=" dark:bg-gray-900 bg-slate-50 py-5 rounded-3xl">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 ">
           <div className="mb-10 lg:mb-16 flex justify-center items-center flex-col gap-x-0 gap-y-6 lg:gap-y-0 lg:flex-row lg:justify-between max-md:max-w-lg max-md:mx-auto">
               <div className="relative w-full text-center lg:text-left lg:w-2/4">
                   <h2 data-aos="fade-down" className="text-4xl font-bold text-gray-900 leading-[3.25rem] lg:mb-6 mx-auto max-w-max lg:max-w-md lg:mx-0">Enjoy the finest features with our products</h2>
               </div>
               <div className="relative w-full text-center  lg:text-left lg:w-2/4">
                   <p data-aos="fade-right" className="text-lg font-normal text-gray-500 mb-5">We provide all the advantages that can simplify all your financial transactions without any further requirements</p> 
-                  <a data-aos="fade-right" href="#" className="flex flex-row items-center justify-center gap-2 text-base font-semibold text-indigo-600 lg:justify-start hover:text-indigo-700 ">Button CTA <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M7.5 15L11.0858 11.4142C11.7525 10.7475 12.0858 10.4142 12.0858 10C12.0858 9.58579 11.7525 9.25245 11.0858 8.58579L7.5 5" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg>
+                  <a data-aos="fade-right" href="#" className="flex flex-row items-center justify-center gap-2 text-base font-semibold text-indigo-600 lg:justify-start hover:text-indigo-700 "> 
                       </a> 
               </div>
           </div>
@@ -43,7 +45,7 @@ const Features = () => {
                       {/* <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M24.7222 11.6667V7.22225C24.7222 5.99495 23.7273 5 22.5 5H4.72222C3.49492 5 2.5 5.99492 2.5 7.22222V22.7778C2.5 24.0051 3.49492 25 4.72222 25H22.5C23.7273 25 24.7222 24.005 24.7222 22.7777V17.7778M20.8333 17.7778H25.2778C26.5051 17.7778 27.5 16.7829 27.5 15.5556V13.8889C27.5 12.6616 26.5051 11.6667 25.2778 11.6667H20.8333C19.606 11.6667 18.6111 12.6616 18.6111 13.8889V15.5556C18.6111 16.7829 19.606 17.7778 20.8333 17.7778Z" stroke="#4F46E5" stroke-width="2"></path>
                           </svg> */}
-                          <IoIosWallet className='text-green-500 size-8' />
+                          <IoIosWallet className='text-green-500 size-8 hover:rotate-12' />
                           
                   </div>
                   <h4 className="text-xl font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white">Easy Payment</h4>
@@ -56,7 +58,7 @@ const Features = () => {
                       {/* <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M14.375 15.8571C16.1009 15.8571 17.5 14.458 17.5 12.7321C17.5 11.0062 16.1009 9.6071 14.375 9.6071C12.6491 9.6071 11.25 11.0062 11.25 12.7321C11.25 14.458 12.6491 15.8571 14.375 15.8571ZM14.375 15.8571V20.8571M3.75 13.2264V15.2343C3.75 17.6868 3.75 18.9131 4.27747 19.9685C4.80493 21.0239 5.78567 21.76 7.74715 23.2322L8.57248 23.8516C11.4626 26.0208 12.9077 27.1054 14.5753 27.1054C16.243 27.1054 17.688 26.0208 20.5782 23.8516L21.4035 23.2322C23.365 21.76 24.3457 21.0239 24.8732 19.9685C25.4006 18.9131 25.4006 17.6868 25.4006 15.2343V13.2264C25.4006 9.95932 25.4006 8.32576 24.546 7.05852C23.6913 5.79128 22.1768 5.17918 19.1477 3.95499L18.3223 3.62144C16.4724 2.87381 15.5475 2.5 14.5753 2.5C13.6032 2.5 12.6782 2.87381 10.8283 3.62144L10.003 3.95499C6.97389 5.17919 5.45934 5.79128 4.60467 7.05852C3.75 8.32576 3.75 9.95932 3.75 13.2264Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                           </svg> */}
-                          <IoMdOptions className='text-green-500 size-8' />
+                          <IoMdOptions className='text-green-500 size-8 hover:rotate-12' />
                           
                   </div>
                   <h4 className="text-xl font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white">Safe Transaction</h4>
@@ -66,7 +68,7 @@ const Features = () => {
               </div>
               <div data-aos="fade-up-right" className="group relative w-full bg-gray-100 rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-64 xl:p-7 xl:w-1/4 hover:bg-indigo-600">
                   <div className="bg-white rounded-full flex justify-center items-center mb-5 w-14 h-14 ">
-                  <RiCustomerServiceFill className='text-green-500 size-8' />
+                  <RiCustomerServiceFill className='text-green-500 size-8 hover:rotate-12' />
                           
                   </div>
                   <h4 className="text-xl font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white">Fast Customer Service </h4>
@@ -76,7 +78,7 @@ const Features = () => {
               </div>
               <div data-aos="fade-up-right" className="group relative w-full bg-gray-100 rounded-2xl p-4 transition-all duration-500 max-md:max-w-md max-md:mx-auto md:w-2/5 md:h-64 xl:p-7 xl:w-1/4 hover:bg-indigo-600">
                   <div className="bg-white rounded-full flex justify-center items-center mb-5 w-14 h-14 ">
-                  <AiFillHome className='text-green-500 size-8' />
+                  <AiFillHome className='text-green-500 size-8 hover:rotate-12' />
                           
                   </div>
                   <h4 className="text-xl font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white">Quick Transaction</h4>
@@ -87,6 +89,7 @@ const Features = () => {
           </div>
     </div>
   </section>
+  </div>
                                         
                                         
   );

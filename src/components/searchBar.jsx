@@ -34,23 +34,23 @@ const SearchBar = () => {
 
     return (
      
-      <div className="flex justify-center items-center py-5">
-    <div className="flex items-center bg-white border border-gray-200 rounded-full p-3 w-full max-w-4xl">
+      <div className="flex justify-center items-center ">
+    <div className="flex items-center bg-white  border-gray-200 rounded-full p-3 w-full max-w-4xl bg-opacity-40 backdrop-blur-lg">
       
       {/* Location Dropdown */}
       <div className="relative flex-1 flex items-center space-x-2 px-3">
-        <MapPinIcon className="h-6 w-6 text-purple-600" />
+        <MapPinIcon className="h-6 w-6 text-green-500" />
         <select
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          className="w-full appearance-none bg-transparent focus:outline-none cursor-pointer"
+          className="w-full appearance-none bg-transparent focus:outline-none cursor-pointer font-semibold"
         >
           <option value="Mumbai">Mumbai</option>
           <option value="Delhi">Delhi</option>
           <option value="Bangalore">Bangalore</option>
           <option value="Pune">Pune</option>
         </select>
-        <ChevronDownIcon className="h-5 w-5 text-gray-500" />
+        <ChevronDownIcon className="h-5 w-5 text-white" />
       </div>
 
       {/* Separator */}
@@ -58,11 +58,11 @@ const SearchBar = () => {
 
       {/* Flat Type Dropdown */}
       <div className="relative flex-1 flex items-center space-x-2 px-3">
-        <HomeIcon className="h-6 w-6 text-purple-600" />
+        <HomeIcon className="h-6 w-6 text-green-500" />
         <select
           value={flatType}
           onChange={(e) => setFlatType(e.target.value)}
-          className="w-full appearance-none bg-transparent focus:outline-none cursor-pointer"
+          className="w-full appearance-none bg-transparent focus:outline-none cursor-pointer font-semibold"
         >
           <option value="1BHK">1BHK</option>
           <option value="2BHK">2BHK</option>
@@ -73,22 +73,22 @@ const SearchBar = () => {
       </div>
 
       {/* Separator */}
-      <div className="h-6 border-l border-gray-300"></div>
+      <div className="h-6 border-l border-white"></div>
 
       {/* Price Dropdown */}
       <div className="relative flex-1 flex items-center space-x-2 px-3">
-        <CurrencyDollarIcon className="h-6 w-6 text-purple-600" />
+        <CurrencyDollarIcon className="h-6 w-6 text-green-500" />
         <select
           value={rent}
           onChange={(e) => setRent(e.target.value)}
-          className="w-full appearance-none bg-transparent focus:outline-none cursor-pointer"
+          className="w-full appearance-none bg-transparent focus:outline-none cursor-pointer font-semibold"
         >
           <option value="Price">Price</option>
           <option value="10k-20k">10k-20k</option>
           <option value="20k-30k">20k-30k</option>
           <option value="Above 30k">Above 30k</option>
         </select>
-        <ChevronDownIcon className="h-5 w-5 text-gray-500" />
+        <ChevronDownIcon className="h-5 w-5 text-white" />
       </div>
 
       {/* Search Button */}

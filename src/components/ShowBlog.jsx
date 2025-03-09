@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Undraw from "../assets/undraw_best-place_dhzp.svg"
 
 const ShowBlog = () => {
     useEffect(() => {
@@ -26,18 +27,18 @@ const ShowBlog = () => {
 
     <a data-aos="zoom-out-right" className="group flex flex-col focus:outline-none" href="#">
       <div data-aos="zoom-out-right" className="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
-        <img className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl" src="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Blog Image" />
-        <span className="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-xs font-medium bg-gray-800 text-white py-1.5 px-3 dark:bg-neutral-900">
-          Sponsored
+        <img className="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl" src="https://realestateshop.com.au/wp-content/uploads/2024/06/Untitled-design-1.jpg" alt="Blog Image" />
+        <span className="absolute top-0 end-0 rounded-se-xl opacity-70 backdrop-blur-3xl rounded-es-xl text-xs font-medium bg-gray-800 text-white py-1.5 px-3 dark:bg-neutral-900">
+          Featured
         </span>
       </div>
 
       <div className="mt-7">
         <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-neutral-300 dark:group-hover:text-white">
-          Studio by Preline
+        Finding Your Perfect Rental
         </h3>
         <p className="mt-3 text-gray-800 dark:text-neutral-200">
-          Produce professional, reliable streams easily leveraging Preline's innovative broadcast studio
+        Looking for a rental property can be overwhelming, especially with so many options available online.
         </p>
         <p className="mt-5 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500">
           Read more
@@ -55,10 +56,10 @@ const ShowBlog = () => {
 
       <div className="mt-7">
         <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-neutral-300 dark:group-hover:text-white">
-          Onsite
+        Essential Tips for Tenants
         </h3>
         <p className="mt-3 text-gray-800 dark:text-neutral-200">
-          Optimize your in-person experience with best-in-className capabilities like badge printing and lead retrieval
+          With the rise of online rental listings, fraudulent schemes have also increased.
         </p>
         <p className="mt-5 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500">
           Read more
@@ -69,9 +70,9 @@ const ShowBlog = () => {
  
 
 
-    <a data-aos="flip-up" className="group relative flex flex-col w-full min-h-60 bg-[url('https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80')] bg-center bg-cover rounded-xl hover:shadow-lg focus:outline-none focus:shadow-lg transition" href="#">
+    <a data-aos="flip-up" className="group relative flex flex-col w-full min-h-60 bg-[url('https://preview.redd.it/sometimes-these-ai-generated-images-are-quite-nice-v0-8wii2qlwixmc1.jpg?width=640&crop=smart&auto=webp&s=42bff5804489c8da3360bfee0a0d1b8f297913ac')] bg-center bg-cover rounded-xl hover:shadow-lg focus:outline-none focus:shadow-lg transition" href="#">
       <div className="flex-auto p-4 md:p-6" data-aos="flip-up">
-        <h3 className="text-xl text-white/90 group-hover:text-white"><span className="font-bold">Preline</span> Press publishes books about economic and technological advancement.</h3>
+        <h3 className="text-xl text-white/90 group-hover:text-white"><span className="font-bold">Nest</span> Why Online Rental Platforms Are Changing the Real Estate Game.</h3>
       </div>
       <div className="pt-0 p-4 md:p-6">
         <div className="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-white/70 group-focus:text-white/70">

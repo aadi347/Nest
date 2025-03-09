@@ -1,4 +1,6 @@
-import React from "react";
+
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const flats = [
   {
@@ -28,10 +30,18 @@ const flats = [
 ];
 
 const LastFlatAdd = () => {
+  const [showImage, setShowImage] = useState(false);
+  const [showImageSrc, setShowImageSrc] = useState("");
+
+  const handleImageClick = (src) => {
+    setShowImageSrc(src);
+    setShowImage(true);
+  }
+
   return (
     <div className="p-4">
       <div className="bg-white rounded-lg shadow p-4">
-        <h1 className="text-xl font-bold border-b py-2">Last Flats Added</h1>
+        <h1 className="text-xl font-bold border-b py-2 text-gray-700">Last Flats Added</h1>
 
         {/* Table */}
         <div className="overflow-x-auto mt-4 rounded-md">
@@ -39,51 +49,52 @@ const LastFlatAdd = () => {
             {/* Table Header */}
             <thead>
               <tr className="bg-gray-100">
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 border">
+                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 ">
                   #
                 </th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 border">
+                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 ">
                   Image
                 </th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 border">
+                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 ">
                   Name
                 </th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 border">
+                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 ">
                   Added At
                 </th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 border">
+                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 ">
                   Status
                 </th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 border">
+                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600">
                   Location
                 </th>
               </tr>
             </thead>
 
             {/* Table Body */}
-            <tbody>
+            <tbody className="">
               {flats.map((flat, index) => (
-                <tr key={flat.id} className="border-b hover:bg-gray-50">
-                  <td className="px-4 py-2 border">{index + 1}</td>
-                  <td className="px-4 py-2 border">
+                <tr key={flat.id} className="border-b hover:bg-gray-50 ">
+                  <td className="px-4 py-2">{index + 1}</td>
+                  <td className="px-4 py-2">
                     <img
                       src={flat.image}
                       alt={flat.name}
-                      className="h-12 w-12 object-cover rounded-full shadow-md border"
+                      onClick={() => handleImageClick(flat.image)}
+                      className="h-12 w-12 object-cover rounded-full shadow-md border transform transition duration-300 hover:scale-110 cursor-pointer"
                     />
                   </td>
-                  <td className="px-4 py-2 border text-sm">{flat.name}</td>
-                  <td className="px-4 py-2 border text-sm">{flat.timestamp}</td>
+                  <td className="px-4 py-2 text-sm">{flat.name}</td>
+                  <td className="px-4 py-2  text-sm">{flat.timestamp}</td>
                   <td
-                    className={`px-4 py-2 border text-sm font-semibold ${
+                    className={`px-4 py-2 text-sm font-semibold ${
                       flat.status === "Available"
-                        ? "text-green-600"
+                        ? "text-emerald-500"
                         : "text-red-600"
                     }`}
                   >
                     {flat.status}
                   </td>
-                  <td className="px-4 py-2 border text-sm">{flat.location}</td>
+                  <td className="px-4 py-2 text-sm">{flat.location}</td>
                 </tr>
               ))}
             </tbody>
@@ -91,6 +102,50 @@ const LastFlatAdd = () => {
         </div>
         {/* End Table */}
       </div>
+
+      {/* Image Modal */}
+      {showImage && (
+        <div
+            
+          className="fixed inset-0 z-50 flex  items-center justify-center bg-black bg-opacity-50 backdrop-blur-lg"
+          onClick={() => setShowImage(false)}
+        >
+         
+          <motion.div
+          initial={{ opacity: 0, scale: 0.7 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.7 }}
+          transition={{ duration: 0.6 }}
+          className="fixed inset-0 z-50 flex  items-center justify-center"
+          >
+          <img
+            src={showImageSrc}
+            alt="Flat"
+            className="h-3/4 w-3/4 rounded-lg "
+          />
+          </motion.div>
+          
+          <button
+            className="absolute top-4 right-4 bg-white p-2 rounded-full shadow-lg transform transition duration-300 hover:scale-110 hoover:rotate-180"
+            onClick={() => setShowImage(false)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-black shrink-0 size-4 group-hover:rotate-9 transition"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+      )}
     </div>
   );
 };

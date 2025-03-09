@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-custom-green to-custom-purple text-white py-12">
+    <footer className="bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Top Section: Logo and Social Media */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">

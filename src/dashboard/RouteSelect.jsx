@@ -1,33 +1,49 @@
-import React, { useState } from "react";
-import { FiDollarSign, FiHome, FiLink, FiPaperclip, FiUsers } from "react-icons/fi";
+// RouteSelect
 
-export const RouteSelect = () => {
-  const [selectedRoute, setSelectedRoute] = useState("Dashboard");
+import React from "react";
+import { FiHome } from "react-icons/fi";
+import { CgProfile } from "react-icons/cg";
+import { AiFillHome, AiFillSetting } from "react-icons/ai";
 
+const RouteSelect = ({ selectedRoute, setSelectedRoute }) => {
   return (
-    <div className="space-y-1">
-      <Route Icon={FiHome} title="Dashboard" selected={selectedRoute === "Dashboard"} onClick={() => setSelectedRoute("Dashboard")} />
-      <Route Icon={FiUsers} title="Team" selected={selectedRoute === "Team"} onClick={() => setSelectedRoute("Team")} />
-      <Route Icon={FiPaperclip} title="Invoices" selected={selectedRoute === "Invoices"} onClick={() => setSelectedRoute("Invoices")} />
-      <Route Icon={FiLink} title="Integrations" selected={selectedRoute === "Integrations"} onClick={() => setSelectedRoute("Integrations")} />
-      <Route Icon={FiDollarSign} title="Finance" selected={selectedRoute === "Finance"} onClick={() => setSelectedRoute("Finance")} />
+    <div className="w-[220px] bg-gray-900 text-white p-4 h-screen">
+      <h1 className="text-xl font-bold mb-4">Dashboard</h1>
+      <div className="space-y-2">
+        <button
+          className={`w-full flex items-center p-3 rounded-md ${
+            selectedRoute === "Dashboard" ? "bg-gray-700" : ""
+          }`}
+          onClick={() => setSelectedRoute("Dashboard")}
+        >
+          <FiHome className="mr-2" /> Dashboard
+        </button>
+        <button
+          className={`w-full flex items-center p-3 rounded-md ${
+            selectedRoute === "AddNest" ? "bg-gray-700" : ""
+          }`}
+          onClick={() => setSelectedRoute("AddNest")}
+        >
+          <AiFillHome className="mr-2" /> Add Nest
+        </button>
+        <button
+          className={`w-full flex items-center p-3 rounded-md ${
+            selectedRoute === "ManageNest" ? "bg-gray-700" : ""
+          }`}
+          onClick={() => setSelectedRoute("ManageNest")}
+        >
+          <AiFillSetting className="mr-2" /> Manage Nest
+        </button>
+        <button
+          className={`w-full flex items-center p-3 rounded-md ${
+            selectedRoute === "Profile" ? "bg-gray-700" : ""
+          }`}
+          onClick={() => setSelectedRoute("Profile")}
+        >
+          <CgProfile className="mr-2" /> Profile
+        </button>
+      </div>
     </div>
-  );
-};
-
-const Route = ({ selected, Icon, title, onClick }) => {
-  return (
-    <button
-      onClick={onClick}
-      className={`flex items-center justify-start gap-2 w-full rounded px-2 py-1.5 text-sm transition-[box-shadow,_background-color,_color] ${
-        selected
-          ? "bg-white text-stone-950 shadow"
-          : "hover:bg-stone-200 bg-transparent text-stone-500 shadow-none"
-      }`}
-    >
-      <Icon className={selected ? "text-violet-500" : ""} />
-      <span>{title}</span>
-    </button>
   );
 };
 

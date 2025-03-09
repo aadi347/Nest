@@ -45,7 +45,7 @@ const PropertyListings = () => {
   }, []);
 
   return (
-    <section className="py-16">
+    <section className="py-16 bg-slate-50 rouned-3xl">
     <div className="max-w-7xl mx-auto px-6 lg:px-8">
       <h2
         className="text-3xl font-extrabold text-center text-gray-800 sm:text-4xl"

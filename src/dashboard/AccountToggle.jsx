@@ -10,7 +10,7 @@ const AccountToggle = () => {
              />
              {/* text box */}
              <div className='text-start'>
-                  <span className='text-sm font-bold block'>
+                  <span className='text-sm font-bold text-black block'>
                     Aditya kumar
                   </span>
                   <span className='text-xs text-gray-500 block'>
