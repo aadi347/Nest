@@ -4,24 +4,25 @@ import { CgProfile } from "react-icons/cg";
 import { AiFillHome, AiFillSetting } from "react-icons/ai";
 import AccountToggle from "./AccountToggle";
 import { FaBlogger } from "react-icons/fa";
+import { RiDashboardFill } from "react-icons/ri";
 
 const LeftBar = ({ selectedRoute, setSelectedRoute }) => {
   return (
-    <div className="w-[220px] bg-white backdrop-blur-sm  text-white p-4 h-screen rounded-l-lg ">
+    <div className="w-[220px] bg-white border border-gray-200 text-white p-4 h-screen rounded-l-lg ">
       {/* <h1 className="text-xl font-bold mb-4">Dashboard</h1> */}
       <AccountToggle />
       <div className="space-y-2">
         <button
           className={`w-full flex items-center p-3 text-black  rounded-md ${
-            selectedRoute === "Dashboard" ? "bg-gray-300" : ""
+            selectedRoute === "Dashboard" ? "bg-[#2ec4b6] shadow-[0_4px_10px_#2ec4b6] text-white" : ""
           }`}
           onClick={() => setSelectedRoute("Dashboard")}
         >
-          <FiHome className="mr-2" /> Dashboard
+          <RiDashboardFill className="mr-2" /> Dashboard
         </button>
         <button
           className={`w-full flex items-center p-3 text-black  rounded-md ${
-            selectedRoute === "AddNest" ? "bg-gray-300" : ""
+            selectedRoute === "AddNest" ? "bg-[#2ec4b6] shadow-[0_4px_10px_#2ec4b6] text-white" : ""
           }`}
           onClick={() => setSelectedRoute("AddNest")}
         >
@@ -29,7 +30,7 @@ const LeftBar = ({ selectedRoute, setSelectedRoute }) => {
         </button>
         <button
           className={`w-full flex items-center p-3 text-black  rounded-md ${
-            selectedRoute === "ManageNest" ? "bg-gray-300" : ""
+            selectedRoute === "ManageNest" ? "bg-[#2ec4b6] shadow-[0_4px_10px_#2ec4b6] text-white" : ""
           }`}
           onClick={() => setSelectedRoute("ManageNest")}
         >
@@ -37,7 +38,7 @@ const LeftBar = ({ selectedRoute, setSelectedRoute }) => {
         </button>
         <button
           className={`w-full flex items-center p-3 text-black  rounded-md ${
-            selectedRoute === "Profile" ? "bg-gray-300" : ""
+            selectedRoute === "Profile" ? "bg-[#2ec4b6] shadow-[0_4px_10px_#2ec4b6] text-white" : ""
           }`}
           onClick={() => setSelectedRoute("Profile")}
         >
@@ -46,7 +47,7 @@ const LeftBar = ({ selectedRoute, setSelectedRoute }) => {
 
         <button
           className={`w-full flex items-center p-3 text-black  rounded-md ${
-            selectedRoute === "Blog" ? "bg-gray-300" : ""
+            selectedRoute === "Blog" ? "bg-[#2ec4b6] shadow-[0_4px_10px_#2ec4b6] text-white" : ""
           }`}
           onClick={() => setSelectedRoute("Blog")}
         >

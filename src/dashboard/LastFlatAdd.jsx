@@ -40,7 +40,7 @@ const LastFlatAdd = () => {
 
   return (
     <div className="p-4">
-      <div className="bg-white rounded-lg shadow p-4">
+      <div className="bg-white rounded-lg p-4 border border-gray-200">
         <h1 className="text-xl font-bold border-b py-2 text-gray-700">Last Flats Added</h1>
 
         {/* Table */}

@@ -4,6 +4,10 @@ import ContactImage from "../assets/icons/undraw_contact_us_re_4qqt.svg"
 
 
 const ContactUs = () => {
+    
+    const handleSubmitButton = (e) => {
+        e.preventDefult()
+    }
   return (
     <section className="bg-white dark:bg-gray-900">
     <div className="container px-6 py-12 mx-auto">

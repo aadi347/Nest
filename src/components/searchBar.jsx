@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt, FaHome, FaDollarSign } from 'react-icons/fa';
 import { MapPinIcon, HomeIcon, CurrencyDollarIcon, ChevronDownIcon } from '@heroicons/react/24/solid';
 import axios from 'axios';
+import CustomDropdown from './CustomDropdown';
 
 
 const SearchBar = () => {
@@ -35,22 +36,13 @@ const SearchBar = () => {
     return (
      
       <div className="flex justify-center items-center ">
-    <div className="flex items-center bg-white  border-gray-200 rounded-full p-3 w-full max-w-4xl bg-opacity-40 backdrop-blur-lg">
+    <div className="flex items-center bg-white  border-gray-200 rounded-full p-3 w-full max-w-4xl bg-opacity-30 backdrop-blur-lg">
       
       {/* Location Dropdown */}
       <div className="relative flex-1 flex items-center space-x-2 px-3">
-        <MapPinIcon className="h-6 w-6 text-green-500" />
-        <select
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          className="w-full appearance-none bg-transparent focus:outline-none cursor-pointer font-semibold"
-        >
-          <option value="Mumbai">Mumbai</option>
-          <option value="Delhi">Delhi</option>
-          <option value="Bangalore">Bangalore</option>
-          <option value="Pune">Pune</option>
-        </select>
-        <ChevronDownIcon className="h-5 w-5 text-white" />
+        
+        <CustomDropdown />
+   
       </div>
 
       {/* Separator */}
