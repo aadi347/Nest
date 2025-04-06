@@ -13,36 +13,47 @@ const AddNest = () => {
       houseName: "",
       deposit: "",
       carpetArea: "",
+      image: "",
     });
   
   
     const handleImageChange = (event) => {
         const file = event.target.files[0];
         if (file) {
-          const reader = new FileReader();
-          reader.onloadend = () => {
-            setImagePreview(reader.result);
-          };
-          reader.readAsDataURL(file);
+            setImage(file);
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setImagePreview(reader.result);
+            };
+            reader.readAsDataURL(file);
+            
+            // Ensure the selected image file is stored
+            setImage(file);
         }
-      };
+    };
+    
   
     const handleSubmit = async (event) => {
       event.preventDefault();
-      
+    
       const data = new FormData();
       Object.entries(formData).forEach(([key, value]) => data.append(key, value));
       if (image) data.append("image", image);
-  
+    
+      console.log("Form Data before sending:", Object.fromEntries(data)); // Debugging
+    
       try {
-        const response = await axios.post("http://localhost:3000/addNest/createProperty", data, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
-  
+        const response = await axios.post(
+          "http://localhost:3000/addNest/createProperty",
+          data,
+          {
+            headers: { "Content-Type": "multipart/form-data" },
+          }
+        );
+    
         alert("Property listed successfully!");
         console.log("Response:", response.data);
-  
-        // Reset form after successful submission
+    
         setFormData({
           flatType: "",
           rent: "",
@@ -52,14 +63,17 @@ const AddNest = () => {
           houseName: "",
           deposit: "",
           carpetArea: "",
+          image: "",
         });
+    
         setImage(null);
         setImagePreview(null);
       } catch (error) {
         console.error("Error listing property:", error.response?.data || error.message);
         alert("Error listing property. Please try again.");
       }
-    };
+    };    
+ 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white shadow border border-gray-200 rounded-lg">
       <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-left border-b border-gray-200">List Your Property</h2>
@@ -67,7 +81,10 @@ const AddNest = () => {
         {/* Flat Type */}
         <div>
           <label className="block text-gray-500 font-medium text-sm">Flat Type</label>
-          <select className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]">
+          <select
+          value={formData.flatType}
+          onChange={(e) => setFormData({ ...formData, flatType: e.target.value })}
+          className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]">
             <option>1 BHK</option>
             <option>2 BHK</option>
           </select>
@@ -76,13 +93,19 @@ const AddNest = () => {
         {/* Rent */}
         <div>
           <label className="block text-gray-500 font-medium text-sm">Rent (₹)</label>
-          <input type="number" className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]" />
+          <input
+          value={formData.rent}
+          onChange={(e) => setFormData({ ...formData, rent: e.target.value })}
+          type="number" className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]" />
         </div>
 
         {/* Location */}
         <div>
           <label className="block text-gray-500 font-medium text-sm">Location</label>
-          <select className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]">
+          <select
+          value={formData.location}
+          onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+           className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]">
             <option>Patna</option>
             <option>Delhi</option>
             <option>Mumbai</option>
@@ -92,7 +115,10 @@ const AddNest = () => {
         {/* Parking */}
         <div>
           <label className="block text-gray-500 font-medium text-sm">Parking</label>
-          <select className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]">
+          <select
+          value={formData.parking}
+          onChange={(e) => setFormData({ ...formData, parking: e.target.value })}
+          className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]">
             <option>2-wheeler Shaded</option>
             <option>4-wheeler Shaded</option>
             <option>2-wheeler Non-shaded</option>
@@ -103,7 +129,10 @@ const AddNest = () => {
         {/* Utilities */}
         <div>
           <label className="block text-gray-500 font-medium text-sm">Utilities</label>
-          <select className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]">
+          <select
+          value={formData.utilities}
+          onChange={(e) => setFormData({ ...formData, utilities: e.target.value })}
+          className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]">
             <option>24/7</option>
           </select>
         </div>
@@ -111,19 +140,28 @@ const AddNest = () => {
         {/* House Name */}
         <div>
           <label className="block text-gray-500 font-medium text-sm">House Name</label>
-          <input type="text" className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]" />
+          <input
+          value={formData.houseName}
+          onChange={(e) => setFormData({ ...formData, houseName: e.target.value })}
+          type="text" className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]" />
         </div>
 
         {/* Deposit */}
         <div>
           <label className="block text-gray-500 font-medium text-sm">Deposit (₹)</label>
-          <input type="number" className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]" />
+          <input
+          value={formData.deposit}
+          onChange={(e) => setFormData({ ...formData, deposit: e.target.value })}
+          type="number" className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]" />
         </div>
 
         {/* Carpet Area */}
         <div>
           <label className="block text-gray-500 font-medium text-sm">Carpet Area (sq.ft.)</label>
-          <input type="number" className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]" />
+          <input
+          value={formData.carpetArea}
+          onChange={(e) => setFormData({ ...formData, carpetArea: e.target.value })}
+          type="number" className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]" />
         </div>
       </form>
 

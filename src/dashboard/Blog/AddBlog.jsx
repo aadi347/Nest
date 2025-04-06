@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MdTitle, MdCategory, MdImage, MdTag, MdArticle } from "react-icons/md";
+import { FaRegPaperPlane } from "react-icons/fa";
 import axios from 'axios';
 
 const AddBlog = (onClose) => {
@@ -22,30 +23,36 @@ const AddBlog = (onClose) => {
     }
   };
 
-  // const publishBlogButton = () => {
-  //   setIsFormVisible(false);
-  // };
-
   const handleCloseButton = () => {
     setIsOpen(false);
   }
 
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    if (!title || !content || !category) {
+      alert("Please fill in all required fields");
+      return;
+    }
   
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
     formData.append("category", category);
-    formData.append("seoTags", tags.join(",")); // Convert array to string
-    formData.append("image", image); // Append the image file
+    formData.append("seoTags", tags.join(",")); 
+    if (image) {
+      formData.append("image", image); 
+    }
+  
+    // Debug FormData before sending
+    for (let pair of formData.entries()) {
+      console.log(pair[0], pair[1]);
+    }
   
     try {
       const response = await axios.post("http://localhost:3000/api/createBlog", formData, {
         headers: {
-          "Content-Type": "multipart/form-data", // Important for file upload
+          "Content-Type": "multipart/form-data",
         },
       });
   
@@ -64,9 +71,11 @@ const AddBlog = (onClose) => {
     }
   };
   
-  // Image upload handler
+  
+  
+ 
   const handleImageChange = (e) => {
-    const file = e.target.files[0]; // Get the selected file
+    const file = e.target.files[0]; 
     if (file) {
       setImage(file);
       setImagePreview(URL.createObjectURL(file)); // Create a preview URL
@@ -126,6 +135,9 @@ const AddBlog = (onClose) => {
         </div>
         <div className="relative">
   <MdImage className="absolute left-3 top-3 text-gray-500" />
+
+  {/* image upload section */}
+
   <div className="flex items-center justify-center w-full">
     <label 
       htmlFor="dropzone-file"
@@ -167,11 +179,12 @@ const AddBlog = (onClose) => {
           </div>
         </div>
         <button
-          onClick={handleSubmit}
+        onClick={handleSubmit}
           type="submit"
-          className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 transition"
-        >
-          Publish Blog
+          className="w-full bg-[#2ec4b6] text-white p-2 rounded-lg hover:bg-[#2fb3a6] transition flex items-center justify-center gap-2"
+            >
+        <FaRegPaperPlane className="tranform duration-200 hover:rotate-45" />
+        Publish Blog
         </button>
       </form>
     </motion.div>
