@@ -16,7 +16,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:3000/login", data, {
+      const res = await axios.post("http://localhost:3000/users/login", data, {
         withCredentials: true, // Important for cookies
       });
 
