@@ -48,13 +48,13 @@ const PropertyListings = () => {
     <section className="py-16 bg-slate-50 rouned-3xl">
     <div className="max-w-7xl mx-auto px-6 lg:px-8">
       <h2
-        className="text-3xl font-extrabold text-center text-gray-800 sm:text-4xl"
+        className="text-3xl font-extrabold text-left text-gray-800 sm:text-4xl"
         data-aos="fade-up"
       >
         Featured Listings
       </h2>
       <p
-        className="mt-4 text-center text-lg text-gray-600"
+        className="mt-4 text-left text-lg text-gray-600"
         data-aos="fade-up"
         data-aos-delay="100"
       >

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import NestLogo from "../assets/nest-protocol-nest-logo.png";
 
 const SignUp = () => {
   const [loading, setLoading] = useState(false);
@@ -56,8 +57,15 @@ const SignUp = () => {
         {/* Right Section */}
         <div className="w-1/2 flex justify-center items-center p-8">
           <div className="w-full max-w-md">
-            <h2 className="text-3xl font-semibold text-custom-purple mb-8 text-center">Sign Up</h2>
-            <p className="font-semibold text-gray-300 mb-8 text-center border-b">Create an account to start using NEST Property Listing Service</p>
+          <div className="flex justify-center mb-4">
+        <img
+        src={NestLogo} // Replace with your actual logo path
+        alt="Logo"
+        className="h-16" // Adjust size as needed
+        />
+      </div>
+            <h2 className="text-xl font-semibold text-custom-purple mb-4 text-center">Sign in to your account</h2>
+           
             <form onSubmit={handleSignup} className="space-y-5">
               {/* Name */}
               <input
@@ -88,26 +96,6 @@ const SignUp = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-
-              {/* Date of Birth */}
-              {/* <input
-                type="date"
-                className="w-full p-4 border border-gray-300 rounded-full focus:outline-none focus:border-indigo-500"
-                value={dob}
-                onChange={(e) => setDob(e.target.value)}
-                required
-              /> */}
-
-              {/* Profile Image */}
-              {/* <input
-                placeholder="Place your Profile Image "
-                type="file"
-                accept="image/*"
-                className="w-full p-2"
-                onChange={handleImageChange}
-              /> */}
-
-              {/* Submit Button */}
               <button
                 type="submit"
                 className={`w-full p-4 text-white rounded-full font-semibold  ${
@@ -117,7 +105,6 @@ const SignUp = () => {
               >
                 {loading ? "Signing Up..." : "Sign Up"}
               </button>
-              <p  className="text-1xl font-semibold text-custom-purple mb-8 text-center border-b">or</p>
             
             </form>
           </div>

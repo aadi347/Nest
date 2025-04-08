@@ -48,7 +48,7 @@ const Login = () => {
       }}
     >
       <div className="absolute inset-0 bg-black opacity-30"></div>
-      <div className="relative flex max-w-4xl w-full mx-4 md:mx-0 bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden">
+      <div className="relative flex max-w-4xl w-full mx-4 md:mx-0 bg-white/40 backdrop-blur-3xl rounded-lg shadow-lg overflow-hidden">
         <div className="hidden md:flex md:w-1/2 lg:w-2/5 p-6 items-center justify-center border rounded-lg bg-white ">
           <img
             src={Illustartion}

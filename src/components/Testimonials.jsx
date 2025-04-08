@@ -43,13 +43,13 @@ const Testimonials = () => {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2
-          className="text-3xl font-extrabold text-center bg-gradient-to-r from-custom-green to-custom-purple bg-clip-text text-transparent sm:text-4xl"
+          className="text-3xl font-extrabold text-left bg-gradient-to-r from-custom-green to-custom-purple bg-clip-text text-transparent sm:text-4xl"
           data-aos="fade-up"
         >
           What Our Clients Say
         </h2>
         <p
-          className="mt-4 text-center text-lg text-gray-600"
+          className="mt-4 text-left text-lg text-gray-600"
           data-aos="fade-up"
           data-aos-delay="100"
         >

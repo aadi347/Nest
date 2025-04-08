@@ -23,11 +23,12 @@ const App = () => {
 
   const hideNavbarPaths = ['/dashboard'];
   const hideFooterPaths = ['/dashboard'];
-
+  
   return (
     <>
  
       {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
