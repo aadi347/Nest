@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaEdit, FaTrash, FaPlus, FaSync, FaEye  } from "react-icons/fa";
 import AddBlog from '../AddBlog.jsx';
+import BlogStatic from './BlogStatic.jsx';
 
 const CreateShow = () => {
 
@@ -45,7 +46,9 @@ const CreateShow = () => {
     <div>
         <div className="grid grid-cols-5 min-h-screen gap-6 p-6 ">
    
-      <div className="col-span-3 bg-white border border-gray-200 rounded-lg"></div>
+      <div className="col-span-3 bg-white border border-gray-200 rounded-lg">
+        <BlogStatic />
+      </div>
 
 
       <div className="col-span-2  p-6 rounded-lg flex flex-col bg-white border border-gray-200">

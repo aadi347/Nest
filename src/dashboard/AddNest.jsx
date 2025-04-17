@@ -75,9 +75,9 @@ const AddNest = () => {
     };    
  
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow border border-gray-200 rounded-lg">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-left border-b border-gray-200">List Your Property</h2>
-      <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="max-w-4xl mx-auto p-6 bg-white  border border-gray-100 rounded-lg">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-left">List Your Property</h2>
+      <form className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Flat Type */}
         <div>
           <label className="block text-gray-500 font-medium text-sm">Flat Type</label>

@@ -9,7 +9,7 @@ import DataPrivacy from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/Ser
 
 const Services = () => {
   return (
-    <div className="p-6 md:p-12 bg-white text-gray-800">
+    <div className="p-6 md:p-12 bg-black text-gray-800">
       {/* Hero Section */}
       <section className="text-center mb-10">
         <h1 className="text-4xl font-bold mb-4 text-[#2ec4b6]">Our Services</h1>

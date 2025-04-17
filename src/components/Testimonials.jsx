@@ -38,7 +38,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-slate-50 rounded-3xl"
+    <section className="py-16  rounded-3xl"
       
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -60,7 +60,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className="flex flex-col items-center bg-white p-8 border rounded-3xl hover:shadow-2xl transition-shadow duration-300 ease-in-out"
+              className="flex flex-col items-center bg-[#efd9f7] p-8 border rounded-3xl hover:shadow-2xl transition-shadow duration-300 ease-in-out"
               data-aos="zoom-in"
               data-aos-delay={index * 150} // Delay increases with each card
             >

@@ -50,7 +50,7 @@ const SearchBar = () => {
 
       {/* Flat Type Dropdown */}
       <div className="relative flex-1 flex items-center space-x-2 px-3">
-        <HomeIcon className="h-6 w-6 text-green-500" />
+        <HomeIcon className="h-6 w-6 text-[#8E05C2]" />
         <select
           value={flatType}
           onChange={(e) => setFlatType(e.target.value)}
@@ -69,7 +69,7 @@ const SearchBar = () => {
 
       {/* Price Dropdown */}
       <div className="relative flex-1 flex items-center space-x-2 px-3">
-        <CurrencyDollarIcon className="h-6 w-6 text-green-500" />
+        <CurrencyDollarIcon className="h-6 w-6 text-[#8E05C2]" />
         <select
           value={rent}
           onChange={(e) => setRent(e.target.value)}
@@ -84,7 +84,7 @@ const SearchBar = () => {
       </div>
 
       {/* Search Button */}
-      <button onClick={hanldeSearch} className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-full ml-3">
+      <button onClick={hanldeSearch} className="bg-[#8E05C2] hover:[#8E05C2] text-white font-semibold px-6 py-2 rounded-full ml-3">
         Search
       </button>
     </div>

@@ -45,16 +45,16 @@ const PropertyListings = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-slate-50 rouned-3xl">
+    <section className="py-16  rouned-3xl">
     <div className="max-w-7xl mx-auto px-6 lg:px-8">
       <h2
-        className="text-3xl font-extrabold text-left text-gray-800 sm:text-4xl"
+        className="text-3xl font-extrabold text-left text-white sm:text-4xl"
         data-aos="fade-up"
       >
         Featured Listings
       </h2>
       <p
-        className="mt-4 text-left text-lg text-gray-600"
+        className="mt-4 text-left text-lg text-gray-500"
         data-aos="fade-up"
         data-aos-delay="100"
       >
@@ -65,12 +65,12 @@ const PropertyListings = () => {
         {listings.map((listing, index) => (
           <div
             key={listing.id}
-            className="relative flex flex-col bg-white border rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out before:absolute before:inset-0 before:bg-gradient-to-r before:from-blue-400 before:via-purple-500 before:to-pink-500 before:opacity-0 before:transition-opacity before:duration-300"
+            className="relative flex flex-col bg-[#efd9f7] border border-[#efd9f7]] rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out before:absolute before:inset-0 before:bg-gradient-to-r before:from-blue-400 before:via-purple-500 before:to-pink-500 before:opacity-0 before:transition-opacity before:duration-300"
             data-aos="fade-right"
             data-aos-delay={index * 150} // Delay increases with each card
           >
             {/* Image Section */}
-            <div className="relative w-full h-48">
+            <div className="relative w-full h-48 border border-[#8E05C2] rounded-t-lg overflow-hidden">
               <img
                 src={listing.imageUrl}
                 alt={listing.title}
@@ -81,23 +81,23 @@ const PropertyListings = () => {
             {/* Content Section */}
             <div className="p-6">
               <div className="flex justify-between items-center mb-2 border-b pb-2">
-                <span className="text-2xl font-semibold text-custom-green">
+                <span className="text-2xl font-semibold text-[#8E05C2]">
                   ${listing.rent}
                 </span>
-                <span className="px-3 py-1 bg-green-100 text-green-600 text-xs rounded-full">
+                <span className="px-3 py-1 bg-[rgb(228,178,248)] text-[#8E05C2] text-xs rounded-full">
                   For Rent
                 </span>
               </div>
               <h3 className="text-xl font-semibold text-gray-800">
                 {listing.title}
               </h3>
-              <p className="mt-2 text-gray-600 text-sm">{listing.description}</p>
+              <p className="mt-2 text-gray-600 text-xs">{listing.description}</p>
   
               <div className="mt-4 flex items-center space-x-4 text-gray-600">
                 {/* Location */}
                 <div className="flex items-center">
                   <svg
-                    className="h-5 w-5 text-custom-green mr-1"
+                    className="h-5 w-5 text-[#8E05C2] mr-1"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
                     viewBox="0 0 24 24"
@@ -110,7 +110,7 @@ const PropertyListings = () => {
                 {/* Area */}
                 <div className="flex items-center">
                   <svg
-                    className="h-5 w-5 text-custom-green mr-1"
+                    className="h-5 w-5 text-[#8E05C2] mr-1"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
                     viewBox="0 0 24 24"
@@ -122,7 +122,7 @@ const PropertyListings = () => {
               </div>
   
               {/* More Detail Button */}
-              <button className="mt-4 bg-green-500 text-white hover:bg-green-700 px-4 py-2 rounded-lg font-medium transition duration-200 ease-in-out">
+              <button className="mt-4 bg-[#8E05C2] text-white hover:bg-green-700 px-4 py-2 rounded-lg font-medium transition duration-200 ease-in-out">
                 More Detail
               </button>
             </div>

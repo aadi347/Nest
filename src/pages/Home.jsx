@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
-import MountainImage from "../assets/icons/hand-drawn-flat-design-mountain-landscape_23-2149158786.jpg";
-import { FaMapMarkerAlt, FaHome, FaDollarSign } from 'react-icons/fa';
 import SearchBar from '../components/searchBar';
 import Testimonials from '../components/Testimonials';
 import PropertyListings from '../components/PropertyListings';
 import Features from '../components/Features';
-import ContactNewsletter from '../components/ContactNewsletter';
 import ShowBlog from '../components/ShowBlog';
-import BackgroundImage from "../assets/ggglitch.svg"
-import WeatherApp from "../components/WeatherApp";
-// import NestBoardFeature from '../components/NestBoardFeature';
+// import Faqs from "../components/Faqs";
+// import FlatFinderHero from "../components/FlatFinderHero";
+import Faqs from "../components/faqs";
+import Support from "../components/Support";
 
-{/* <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#ABDCFF] via-[#0396FF] to-[#0396FF] md:text-5xl lg:text-6xl dark:text-white animate-reveal">Welcome to NEST : Redefining Online Rentals</h1>
-<p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Your one-stop platform for finding the perfect rental property. Discover affordable housing, prime locations, and quality infrastructure—all in one place.
-</p> */}
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,7 +29,7 @@ const Home = () => {
   
 
   return (
-    <div className=" px-6 py-2 shadow-xl">
+    <div className=" px-6 py-2 shadow-xl bg-[#040D12]">
 
 
 <div className="relative w-full h-screen flex items-center justify-center px-8 py-12 shadow-xl rounded-3xl">
@@ -55,22 +49,16 @@ const Home = () => {
       
       <div className="relative text-center text-white max-w-3xl p-6">
         {/* <WeatherApp /> */}
-      <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#ABDCFF] via-[#0396FF] to-[#0396FF] md:text-5xl lg:text-6xl dark:text-white animate-reveal">Welcome to NEST : Redefining Online Rentals</h1>
-        <p className="text-sm font-semibold py-5">
+      <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#efc6ff] via-[#b646e3] to-[#8E05C2] md:text-5xl lg:text-6xl dark:text-white animate-reveal">Welcome to NEST : Redefining Online Rentals</h1>
+        <p className="text-xs font-semibold py-5">
           Discover the best properties in prime locations. Start your journey to
           finding the perfect home today.
         </p>
         
         <SearchBar />
       </div>
-    
-         
-        
+   
     </div>
-  
-
-
-      
           <div>
        
         </div> 
@@ -86,8 +74,12 @@ const Home = () => {
         <div>
           <ShowBlog />
           </div>
-
-          
+          <div>
+          <Faqs />
+          </div>
+          <div>
+          <Support />
+          </div>
     </div>
   );
 };
