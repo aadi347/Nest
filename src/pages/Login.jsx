@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Illustartion from "../assets/icons/Tablet login-bro.svg"
+import Illustartion from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/authentication-65.svg"
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -49,16 +49,16 @@ const Login = () => {
     >
       <div className="absolute inset-0 bg-black opacity-30"></div>
       <div className="relative flex max-w-4xl w-full mx-4 md:mx-0 bg-white/40 backdrop-blur-3xl rounded-lg shadow-lg overflow-hidden">
-        <div className="hidden md:flex md:w-1/2 lg:w-2/5 p-6 items-center justify-center border rounded-lg bg-white ">
+        <div className="hidden md:flex md:w-1/2 lg:w-2/5 p-6 items-center justify-center  rounded-lg bg-[#8E05C2]/40 backdrop-blur-3xl">
           <img
             src={Illustartion}
             alt="Illustration"
             className="w-full h-auto object-cover"
           />
         </div>
-        <div className="w-full md:w-1/2 lg:w-3/5 p-8 md:p-12">
-          <h2 className="text-3xl font-semibold text-white mb-6">Welcome to NEST</h2>
-          <p className="text-white mb-6">Please sign in to continue</p>
+        <div className="w-full md:w-1/2 lg:w-3/5 bg-[#8E05C2]/40 backdrop-blur-3xl p-8 md:p-12">
+          <h2 className="text-3xl font-semibold text-white mb-6">Login To Continue</h2>
+          <p className="text-white mb-6">Please log in to continue</p>
           <form onSubmit={handleLogin}>
             <div className="mb-4">
               <label className="block text-white text-sm mb-2" htmlFor="email">
@@ -70,7 +70,7 @@ const Login = () => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 placeholder-gray-300 text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
+                className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 placeholder-gray-300 text-white focus:outline-none focus:ring-2 focus:[#8E05C2]"
                 placeholder="Enter your email"
                 required
               />
@@ -92,8 +92,8 @@ const Login = () => {
             </div>
             <button
               type="submit"
-              className={`w-full py-3 mt-4 bg-teal-500 text-white rounded-lg font-semibold ${
-                loading ? "opacity-50 cursor-not-allowed" : "hover:bg-teal-600"
+              className={`w-full py-3 mt-4 bg-[#8E05C2] text-white rounded-lg font-semibold ${
+                loading ? "opacity-50 cursor-not-allowed" : "hover:bg-[#8E05C2]"
               } transition duration-300`}
               disabled={loading}
             >
@@ -102,7 +102,7 @@ const Login = () => {
           </form>
           <p className="text-white text-sm text-center mt-6">
             Don't have an account?{" "}
-            <Link to="/signup" className="text-teal-400 hover:underline">
+            <Link to="/signup" className="text-[#8E05C2] hover:underline">
               Sign up
             </Link>
           </p>

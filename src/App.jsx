@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation,Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -23,6 +23,8 @@ const App = () => {
 
   const hideNavbarPaths = ['/dashboard'];
   const hideFooterPaths = ['/dashboard'];
+
+  const isAuthenticated = localStorage.getItem("token");
   
   return (
     <>
@@ -37,7 +39,12 @@ const App = () => {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/flatregistrationform" element={<FlatRegistrationForm />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/dashboard"
+          element={
+            isAuthenticated ? <Dashboard /> : <Navigate to="/login" replace />
+          }
+        />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/account" element={<Account />} />
         <Route path="/blog" element={<Blog />} />
