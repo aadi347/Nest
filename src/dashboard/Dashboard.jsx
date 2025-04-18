@@ -6,7 +6,7 @@ const Dashboard = () => {
   const [selectedRoute, setSelectedRoute] = useState("Dashboard"); 
 
   return (
-    <div className="grid gap-4 p-4 bg-gradient-to-r from-violet-200 to-pink-200 grid-cols-[220px,_1fr] h-screen">
+    <div className="grid gap-4 p-4 bg-gray-100 grid-cols-[220px,_1fr] h-screen">
       {/* Sidebar */}
       <LeftBar selectedRoute={selectedRoute} setSelectedRoute={setSelectedRoute} />
 

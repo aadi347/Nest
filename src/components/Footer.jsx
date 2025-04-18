@@ -19,16 +19,16 @@ const Footer = () => {
           {/* Social Media Icons */}
           <div className="flex space-x-4">
             <a href="#" className=" hover:text-white transition-colors duration-200">
-              <FaFacebookF className='text-white' size={20} />
+              <FaFacebookF className='text-[#8E05C2]' size={20} />
             </a>
             <a href="#" className=" hover:text-white transition-colors duration-200">
-              <FaTwitter className='text-white' size={20} />
+              <FaTwitter className='text-[#8E05C2]' size={20} />
             </a>
             <a href="#" className=" hover:text-white transition-colors duration-200">
-              <FaInstagram className='text-white' size={20} />
+              <FaInstagram className='text-[#8E05C2]' size={20} />
             </a>
             <a href="#" className=" hover:text-white transition-colors duration-200">
-              <FaLinkedinIn className='text-white' size={20} />
+              <FaLinkedinIn className='text-[#8E05C2]' size={20} />
             </a>
           </div>
         </div>
@@ -95,7 +95,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <p className="flex items-center">
-                  <svg className="h-5 w-5 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-5 w-5 mr-2 text-[#8E05C2]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   1234 Street Name, City, Country
@@ -103,7 +103,7 @@ const Footer = () => {
               </li>
               <li>
                 <p className="flex items-center">
-                  <svg className="h-5 w-5 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-5 w-5 mr-2 text-[#8E05C2]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 12H8m0 0l4-4m-4 4l4 4M21 12c0 4.418-3.582 8-8 8a8 8 0 01-8-8 8 8 0 018-8c4.418 0 8 3.582 8 8z" />
                   </svg>
                   info@nest.com
@@ -111,7 +111,7 @@ const Footer = () => {
               </li>
               <li>
                 <p className="flex items-center">
-                  <svg className="h-5 w-5 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-5 w-5 mr-2 text-[#8E05C2]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5h2l.4 2M7 5h10l4 16H5l2-8M7 5v2a2 2 0 002 2h4a2 2 0 002-2V5" />
                   </svg>
                   +1 (555) 123-4567

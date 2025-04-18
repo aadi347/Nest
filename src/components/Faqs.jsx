@@ -14,16 +14,16 @@ const Faqs = () => {
         </div>
         <div className="accordion-group" data-accordion="default-accordion">
           <div
-            className="accordion border border-solid border-gray-300 p-4 rounded-xl transition duration-500 accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4 active"
+            className="accordion border border-solid border-[#8E05C2] p-4 rounded-xl transition duration-500 accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4 active"
             id="basic-heading-one-with-icon"
           >
             <button
-              className="accordion-toggle group inline-flex items-center justify-between text-left text-lg font-normal leading-8 text-gray-900 w-full transition duration-500 hover:text-indigo-600 accordion-active:font-medium accordion-active:text-indigo-600"
+              className="accordion-toggle group inline-flex items-center justify-between text-left text-lg font-normal leading-8 text-[#8E05C2] w-full transition duration-500 hover:text-indigo-600 accordion-active:font-medium accordion-active:text-indigo-600"
               aria-controls="basic-collapse-one-with-icon"
             >
-              <h5>How can I reset my password?</h5>
+              <h5 >How can I reset my password?</h5>
               <svg
-                className="w-6 h-6 text-gray-900 transition duration-500 block accordion-active:text-indigo-600 accordion-active:hidden group-hover:text-indigo-600 origin-center"
+                className="w-6 h-6 text-[#8E05C2] transition duration-500 block accordion-active:text-indigo-600 accordion-active:hidden group-hover:text-[#8E05C2] origin-center"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ const Faqs = () => {
                 ></path>
               </svg>
               <svg
-                className="w-6 h-6 text-gray-900 transition duration-500 hidden accordion-active:text-indigo-600 accordion-active:block group-hover:text-indigo-600"
+                className="w-6 h-6 text-[#8E05C2] transition duration-500 hidden accordion-active:text-indigo-600 accordion-active:block group-hover:text-[#8E05C2"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ const Faqs = () => {
               style={{ maxHeight: '250px' }}
 
             >
-              <p className="text-base text-gray-900 font-normal leading-6">
+              <p className="text-base text-gray-500 font-normal leading-6">
                 To create an account, find the 'Sign up' or 'Create account'
                 button, fill out the registration form with your personal
                 information, and click 'Create account' or 'Sign up.' Verify
@@ -68,11 +68,11 @@ const Faqs = () => {
             </div>
           </div>
           <div
-            className="accordion border border-solid border-gray-300 p-4 rounded-xl accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4"
+            className="accordion border border-solid border-[#8E05C2] p-4 rounded-xl accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4"
             id="basic-heading-two-with-icon"
           >
             <button
-              className="accordion-toggle group inline-flex items-center justify-between text-left text-lg font-normal leading-8 text-gray-900 w-full transition duration-500 hover:text-indigo-600 accordion-active:font-medium accordion-active:text-indigo-600"
+              className="accordion-toggle group inline-flex items-center justify-between text-left text-lg font-normal leading-8 text-[#8E05C2] w-full transition duration-500 hover:text-[#8E05C2] accordion-active:font-medium accordion-active:text-indigo-600"
               aria-controls="basic-collapse-two-with-icon"
             >
               <h5>How do I update my billing information?</h5>
@@ -110,7 +110,7 @@ const Faqs = () => {
               className="accordion-content w-full overflow-hidden pr-4"
               aria-labelledby="basic-heading-two"
             >
-              <p className="text-base text-gray-900 font-normal leading-6">
+              <p className="text-base text-gray-500 font-normal leading-6">
                 To create an account, find the 'Sign up' or 'Create account'
                 button, fill out the registration form with your personal
                 information, and click 'Create account' or 'Sign up.' Verify
@@ -120,11 +120,11 @@ const Faqs = () => {
             </div>
           </div>
           <div
-            className="accordion border border-solid border-gray-300 p-4 rounded-xl accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4"
+            className="accordion border border-solid border-[#8E05C2] p-4 rounded-xl accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4"
             id="basic-heading-three-with-icon"
           >
             <button
-              className="accordion-toggle group inline-flex items-center justify-between text-left text-lg font-normal leading-8 text-gray-900 w-full transition duration-500 hover:text-indigo-600 accordion-active:font-medium accordion-active:text-indigo-600"
+              className="accordion-toggle group inline-flex items-center justify-between text-left text-lg font-normal leading-8 text-[#8E05C2] w-full transition duration-500  accordion-active:font-medium accordion-active:text-indigo-600"
               aria-controls="basic-collapse-three-with-icon"
             >
               <h5>How can I contact customer support?</h5>
@@ -162,7 +162,7 @@ const Faqs = () => {
               className="accordion-content w-full overflow-hidden pr-4"
               aria-labelledby="basic-heading-three"
             >
-              <p className="text-base text-gray-900 font-normal leading-6">
+              <p className="text-base text-gray-500 font-normal leading-6">
                 To create an account, find the 'Sign up' or 'Create account'
                 button, fill out the registration form with your personal
                 information, and click 'Create account' or 'Sign up.' Verify
@@ -172,11 +172,11 @@ const Faqs = () => {
             </div>
           </div>
           <div
-            className="accordion border border-solid border-gray-300 p-4 rounded-xl accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4"
+            className="accordion border border-solid border-[#8E05C2] p-4 rounded-xl accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4"
             id="basic-heading-three-with-icon"
           >
             <button
-              className="accordion-toggle group inline-flex items-center justify-between text-left text-lg font-normal leading-8 text-gray-900 w-full transition duration-500 hover:text-indigo-600 accordion-active:font-medium accordion-active:text-indigo-600"
+              className="accordion-toggle group inline-flex items-center justify-between text-left text-lg font-normal leading-8 text-[#8E05C2] w-full transition duration-500 hover:text-indigo-600 accordion-active:font-medium accordion-active:text-indigo-600"
               aria-controls="basic-collapse-three-with-icon"
             >
               <h5>How do I delete my account?</h5>
@@ -215,7 +215,7 @@ const Faqs = () => {
               aria-labelledby="basic-heading-three"
               
             >
-              <p className="text-base text-gray-900 font-normal leading-6">
+              <p className="text-base text-gray-500 font-normal leading-6">
                 To create an account, find the 'Sign up' or 'Create account'
                 button, fill out the registration form with your personal
                 information, and click 'Create account' or 'Sign up.' Verify

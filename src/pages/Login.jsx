@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Illustartion from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/authentication-65.svg"
+import ErrorBox from "../components/ErrorBox";
+import LoginLoader from "../components/LoginLoader";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorPopup, setErrorPopup] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   const navigate = useNavigate();
 
@@ -21,9 +25,15 @@ const Login = () => {
       });
 
       if (res.status === 200) {
-        setLoading(false);
-        alert("Login successful");
-        navigate("/dashboard"); // Redirect to dashboard
+        setLoading(true);
+
+        setTimeout(() => {
+          setLoader(false);
+          // alert("Login successful");
+          navigate("/dashboard"); 
+        }, 4000);
+        setLoader(true);
+        // Redirect to dashboard
       } else {
         setLoading(false);
         alert("Invalid login credentials. Please try again.");
@@ -32,8 +42,10 @@ const Login = () => {
       setLoading(false);
       if (error.response) {
         alert(error.response.data.message || "Login failed. Please try again.");
+    
       } else {
-        alert("An error occurred while logging in. Please try again.");
+        // alert("An error occurred while logging in. Please try again.");
+        setErrorPopup(true);
       }
       console.error(error);
     }
@@ -108,6 +120,20 @@ const Login = () => {
           </p>
         </div>
       </div>
+      {/* Conditionally show popup */}
+      {errorPopup && (
+        <ErrorBox
+         
+          onClose={() => setErrorPopup(false)}
+        />
+      )}
+
+      {loader && (
+        <div className="">
+          <LoginLoader />
+        </div>
+      )}
+      
     </div>
   );
 };
