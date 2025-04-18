@@ -9,6 +9,7 @@ import DashboardPage from "./DashboardPage";
 import Profile from "./Profile";
 import ManageBlog from "./Blog/ManageBlog";
 import AddNest from "./AddNest";
+import ContactMessage from "./ContactMessage";
 
 const MainDash = ({ selectedRoute }) => {
   return (
@@ -19,6 +20,11 @@ const MainDash = ({ selectedRoute }) => {
       {selectedRoute === "Profile" && <Profile />}
       {selectedRoute === "Blog" && <ManageBlog />}   
       {selectedRoute === "AddNest" && <AddNest />}
+      {/* {selectedRoute === "ManageNest" && <ManageNest />} */}
+      {selectedRoute === "ContactMessage" && <ContactMessage />}
+      {/* {selectedRoute === "LastFlatAdd" && <LastFlatAdd />} */}
+      {/* {selectedRoute === "Grid" && <Grid />} */}
+      {/* {selectedRoute === "AccountToggle" && <AccountTggle />} */}
 
 
     </div>

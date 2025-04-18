@@ -5,6 +5,8 @@ import { AiFillHome, AiFillSetting } from "react-icons/ai";
 import AccountToggle from "./AccountToggle";
 import { FaBlogger } from "react-icons/fa";
 import { RiDashboardFill } from "react-icons/ri";
+import { BiSolidMessageSquareDetail } from "react-icons/bi";
+
 
 const LeftBar = ({ selectedRoute, setSelectedRoute }) => {
   return (
@@ -53,6 +55,17 @@ const LeftBar = ({ selectedRoute, setSelectedRoute }) => {
         >
           <FaBlogger className="mr-2" /> Blog
         </button>
+
+        <button
+          className={`w-full flex items-center p-3 text-black  rounded-md ${
+            selectedRoute === "ContactMessage" ? "bg-[#2ec4b6] shadow-[0_4px_10px_#2ec4b6] text-white" : ""
+          }`}
+          onClick={() => setSelectedRoute("ContactMessage")}
+        >
+          <BiSolidMessageSquareDetail className="mr-2" /> Contact Message
+        </button>
+
+
       </div>
     </div>
   );

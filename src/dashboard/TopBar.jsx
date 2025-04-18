@@ -1,5 +1,7 @@
 import React from 'react'
 import { FiCalendar } from "react-icons/fi";
+import { TbLogout } from "react-icons/tb";
+
 
 const TopBar = () => {
     return (
@@ -12,9 +14,9 @@ const TopBar = () => {
             </span>
           </div>
   
-          <button className="flex text-sm items-center gap-2 bg-stone-100 transition-colors hover:bg-violet-100 hover:text-violet-700 px-3 py-1.5 rounded">
-            <FiCalendar />
-            <span>Prev 6 Months</span>
+          <button className="flex text-sm text-white font-semibold items-center gap-2 bg-[#2ec4b6] transition-colors hover:bg-[#9fede5] hover:text-[#2b877e] px-3 py-1.5 rounded-full">
+          <TbLogout />
+            <span className='text-xs'>Log Out</span>
           </button>
         </div>
       </div>
