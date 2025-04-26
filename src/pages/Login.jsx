@@ -42,6 +42,7 @@ const Login = () => {
       setLoading(false);
       if (error.response) {
         alert(error.response.data.message || "Login failed. Please try again.");
+        console.error(error.response.data);
     
       } else {
         // alert("An error occurred while logging in. Please try again.");

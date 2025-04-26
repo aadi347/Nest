@@ -79,6 +79,17 @@ const Navbar = () => {
                 Home
               </a>
             </li>
+
+            <li>
+              <a
+                href="/blog"
+                className="block py-2 px-3 md:p-0 text-white bg-[#8E05C2] rounded md:bg-transparent md:text-[#8E05C2] md:dark:text-blue-500"
+                aria-current="page"
+              >
+                Blog
+              </a>
+            </li>
+
             <li>
               <a
                 href="/aboutus"

@@ -15,6 +15,7 @@ import Blog  from './pages/Blog';
 import Demo from './pages/Demo';
 import Dashboard from './Dashboard/Dashboard';
 import Services from './pages/Services';
+import DepartmentTable from './pages/DepartmentTable';
 // import addFlat from './dashboard/addFlat';
 
 const App = () => {
@@ -50,6 +51,9 @@ const App = () => {
         <Route path="/blog" element={<Blog />} />
         <Route path="/demo" element={<Demo />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/departmenttable" element={<DepartmentTable />} />
+        {/* <Route path="/addFlat" element={<addFlat />} /> */}
+        {/* Add more routes as needed */}
       </Routes>
       {!hideFooterPaths.includes(location.pathname) && <Footer />}
     </>

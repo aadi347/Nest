@@ -19,6 +19,7 @@
     "@splinetool/runtime": "^1.9.82",
     "aos": "^2.3.4",
     "axios": "^1.7.7",
+    "caniuse-lite": "^1.0.30001715",
     "dotenv": "^16.4.7",
     "express-session": "^1.18.1",
     "framer-motion": "^12.4.10",

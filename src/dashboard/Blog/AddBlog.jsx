@@ -2,17 +2,19 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { MdTitle, MdCategory, MdImage, MdTag, MdArticle } from "react-icons/md";
 import { FaRegPaperPlane } from "react-icons/fa";
+// import Modal from "../../components/Modal";
 import axios from 'axios';
 
 const AddBlog = (onClose) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState("");
-  const [category, setCategory] = useState("Technology");
+  const [category, setCategory] = useState("");
   const [tags, setTags] = useState([]);
   const [tagInput, setTagInput] = useState("");
   const [isOpen, setIsOpen] = useState(true);
   const [imagePreview, setImagePreview] = useState(null);
+  // const [modalOpen, setModalOpen] = useState(false);
 
 
   const handleTagKeyDown = (e) => {
@@ -55,14 +57,17 @@ const AddBlog = (onClose) => {
           "Content-Type": "multipart/form-data",
         },
       });
+      // http://localhost:3000/api/getAllBlogs
+      
   
       console.log("Blog Submitted:", response.data);
   
       if (response.status === 201) {
         alert("Blog created successfully!");
+        // setModalOpen(true);
         setTitle("");
         setContent("");
-        setCategory("Technology");
+        setCategory("");
         setTags([]);
         setImage(null);
       }
@@ -109,17 +114,15 @@ const AddBlog = (onClose) => {
           </div>
           <div className="relative">
             <MdCategory className="absolute left-3 top-3 text-gray-500" />
-            <select
+            <input
+              type="text"
+              placeholder="Category"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               className="w-full pl-10 p-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+              required
             >
-              <option>Select Category</option>
-              <option>Technology</option>
-              <option>Business</option>
-              <option>Lifestyle</option>
-              <option>Health</option>
-            </select>
+            </input>
           </div>
         </div>
         <div className="relative">
@@ -188,6 +191,13 @@ const AddBlog = (onClose) => {
         </button>
       </form>
     </motion.div>
+
+    {/* <Modal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        title="Blog Created"
+        message="Your blog has been successfully created."
+      /> */}
   </div>
   );
 };

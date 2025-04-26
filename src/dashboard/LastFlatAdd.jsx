@@ -49,22 +49,22 @@ const LastFlatAdd = () => {
             {/* Table Header */}
             <thead>
               <tr className="bg-gray-100">
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 ">
+                <th className="px-4 py-2 text-left text-xs font-semibold text-gray-600 ">
                   #
                 </th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 ">
+                <th className="px-4 py-2 text-left text-xs font-semibold text-gray-600 ">
                   Image
                 </th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 ">
+                <th className="px-4 py-2 text-left text-xs font-semibold text-gray-600 ">
                   Name
                 </th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 ">
+                <th className="px-4 py-2 text-left text-xs font-semibold text-gray-600 ">
                   Added At
                 </th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600 ">
+                <th className="px-4 py-2 text-left text-xs font-semibold text-gray-600 ">
                   Status
                 </th>
-                <th className="px-4 py-2 text-left text-sm font-semibold text-gray-600">
+                <th className="px-4 py-2 text-left text-xs font-semibold text-gray-600">
                   Location
                 </th>
               </tr>
@@ -74,7 +74,7 @@ const LastFlatAdd = () => {
             <tbody className="">
               {flats.map((flat, index) => (
                 <tr key={flat.id} className="border-b hover:bg-gray-50 ">
-                  <td className="px-4 py-2">{index + 1}</td>
+                  <td className="px-4 py-2 text-xs">{index + 1}</td>
                   <td className="px-4 py-2">
                     <img
                       src={flat.image}
@@ -83,10 +83,10 @@ const LastFlatAdd = () => {
                       className="h-12 w-12 object-cover rounded-full shadow-md border transform transition duration-300 hover:scale-110 cursor-pointer"
                     />
                   </td>
-                  <td className="px-4 py-2 text-sm">{flat.name}</td>
-                  <td className="px-4 py-2  text-sm">{flat.timestamp}</td>
+                  <td className="px-4 py-2 text-xs">{flat.name}</td>
+                  <td className="px-4 py-2  text-xs">{flat.timestamp}</td>
                   <td
-                    className={`px-4 py-2 text-sm font-semibold ${
+                    className={`px-4 py-2 text-xs font-semibold ${
                       flat.status === "Available"
                         ? "text-emerald-500"
                         : "text-red-600"
@@ -94,7 +94,7 @@ const LastFlatAdd = () => {
                   >
                     {flat.status}
                   </td>
-                  <td className="px-4 py-2 text-sm">{flat.location}</td>
+                  <td className="px-4 py-2 text-xs">{flat.location}</td>
                 </tr>
               ))}
             </tbody>
