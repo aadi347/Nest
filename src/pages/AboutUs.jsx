@@ -5,9 +5,9 @@ import Reception from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/recep
 
 const AboutUs = () => {
   return (
-    <div className='bg-black h-screen flex items-center justify-center'>
+    <div className='bg-gray-50 h-screen flex items-center justify-center'>
     <div
-      className="bg-black max-w-7xl mx-auto px-6 lg:px-8  transition duration-300 ease-in-out transform hover:scale-100"
+      className="bg-black shadow-2xl max-w-7xl mx-auto px-6 lg:px-8  transition duration-300 ease-in-out transform hover:scale-100"
       style={{ width: '1212px', height: '611px', borderRadius: '50px' }}
     >
       {/* Content Wrapper */}

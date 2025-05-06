@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import NestLogo from '../assets/Nest.svg'; // Adjust the path as necessary
 
 
 const Footer = () => {
@@ -11,9 +12,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           {/* Logo */}
           <div className="mb-6 md:mb-0">
-            <Link to="/" className="text-2xl font-bold text-white hover:text-indigo-400 transition-colors duration-200">
-              NEST
-            </Link>
+            <img src={NestLogo} alt="" className='h-20 w-20' />
           </div>
           
           {/* Social Media Icons */}

@@ -14,6 +14,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  // function to send login request
   const handleLogin = async (e) => {
     e.preventDefault();
     const data = { email, password };
@@ -21,7 +22,7 @@ const Login = () => {
 
     try {
       const res = await axios.post("http://localhost:3000/users/login", data, {
-        withCredentials: true, // Important for cookies
+        withCredentials: true, 
       });
 
       if (res.status === 200) {
@@ -61,15 +62,43 @@ const Login = () => {
       }}
     >
       <div className="absolute inset-0 bg-black opacity-30"></div>
-      <div className="relative flex max-w-4xl w-full mx-4 md:mx-0 bg-white/40 backdrop-blur-3xl rounded-lg shadow-lg overflow-hidden">
-        <div className="hidden md:flex md:w-1/2 lg:w-2/5 p-6 items-center justify-center  rounded-lg bg-[#8E05C2]/40 backdrop-blur-3xl">
-          <img
-            src={Illustartion}
-            alt="Illustration"
-            className="w-full h-auto object-cover"
-          />
-        </div>
-        <div className="w-full md:w-1/2 lg:w-3/5 bg-[#8E05C2]/40 backdrop-blur-3xl p-8 md:p-12">
+      <div className="relative flex max-w-4xl w-full mx-4 md:mx-0  rounded-lg shadow-lg overflow-hidden">
+      <div className="hidden md:flex md:w-1/2 lg:w-2/5 p-6 items-center justify-center rounded-lg bg-white relative">
+  {/* Image */}
+  <img
+    src={Illustartion}
+    alt="Illustration"
+    className="w-full h-auto object-cover"
+  />
+
+  {/* Heading and Arrow */}
+  <h1 className="absolute top-8 left-1/2 whitespace-nowrap transform -translate-x-1/2 text-2xl font-bold text-gray-700 z-10">
+    Login to Your Account
+    <span className="ml-2 text-red-500">↓</span> {/* Arrow symbol */}
+  </h1>
+
+  {/* Social Media Icons */}
+  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 z-10">
+    <a href="#" className="bg-blue-500 p-3 rounded-full text-white hover:bg-blue-600">
+      {/* Replace with your social media icon */}
+      <i className="fab fa-facebook-f"></i>
+    </a>
+    <a href="#" className="bg-blue-400 p-3 rounded-full text-white hover:bg-blue-500">
+      {/* Replace with your social media icon */}
+      <i className="fab fa-twitter"></i>
+    </a>
+    <a href="#" className="bg-pink-500 p-3 rounded-full text-white hover:bg-pink-600">
+      {/* Replace with your social media icon */}
+      <i className="fab fa-instagram"></i>
+    </a>
+    <a href="#" className="bg-red-600 p-3 rounded-full text-white hover:bg-red-700">
+      {/* Replace with your social media icon */}
+      <i className="fab fa-youtube"></i>
+    </a>
+  </div>
+</div>
+
+        <div className="w-full md:w-1/2 lg:w-3/5 bg-white/5 backdrop-blur-3xl p-8 md:p-12">
           <h2 className="text-3xl font-semibold text-white mb-6">Login To Continue</h2>
           <p className="text-white mb-6">Please log in to continue</p>
           <form onSubmit={handleLogin}>

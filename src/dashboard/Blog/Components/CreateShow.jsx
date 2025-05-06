@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaEdit, FaTrash, FaPlus, FaSync, FaEye } from "react-icons/fa";
 import AddBlog from '../AddBlog.jsx';
 import BlogStatic from './BlogStatic.jsx';
+import { Link } from 'react-router-dom';
 
 const CreateShow = () => {
   const [isaddBlogFormShow, setIsaddBlogFormShow] = useState(false);
@@ -14,7 +15,7 @@ const CreateShow = () => {
 
   const handleDeleteBlog = async (id) => {
     if (!window.confirm("Are you sure you want to delete this blog?")) {
-      return; // If user cancels
+      return; 
     }
   
     try {
@@ -26,8 +27,6 @@ const CreateShow = () => {
   
       if (response.ok) {
         alert("Blog deleted successfully!");
-        // Optionally: refresh the blogs after deleting
-         // assuming you have a fetchBlogs() function
       } else {
         alert(result.message || "Failed to delete blog");
       }
@@ -37,8 +36,6 @@ const CreateShow = () => {
     }
   };
   
-  
-
   const handleAddBlogButton = () => {
     setIsaddBlogFormShow(true);
   };
@@ -103,9 +100,9 @@ const CreateShow = () => {
                       <button onClick={() => handleDeleteBlog(blog._id)} className="flex items-center gap-1 border text-gray-300 text-xs px-3 py-1 rounded hover:bg-[#2ec4b6]">
                         <FaTrash className="size-3 text-[#2ec4b6] hover:text-white" />
                       </button>
-                      <button className="flex items-center gap-1 border text-gray-300 text-xs px-3 py-1 rounded hover:bg-[#2ec4b6]">
+                      <Link to="/blog" className="flex items-center gap-1 border text-gray-300 text-xs px-3 py-1 rounded hover:bg-[#2ec4b6]">
                         <FaEye className="size-3 text-[#2ec4b6] hover:text-white" />
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

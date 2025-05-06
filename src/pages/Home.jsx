@@ -8,15 +8,20 @@ import ShowBlog from '../components/ShowBlog';
 // import FlatFinderHero from "../components/FlatFinderHero";
 import Faqs from "../components/faqs";
 import Support from "../components/Support";
+import ImageOne from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/imag1.jpg";
+import ImageTwo from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/imag2.jpg";
+import ImageThree from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/image3.jpg";
+import NewsletterSignup from "../components/NewsletterSignup";
+import DashboardShowcase from "../components/DashboardShowcase";
 
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const images = [
-    "https://www.thehousedesigners.com/images/plans/URD/bulk/4286/the-prestige-front-thd.jpg",
-    "https://www.thehousedesigners.com/images/plans/01/UDC/bulk/7888/front_m.webp",
-    "https://cdn.houseplansservices.com/product/cdethe3dctml7tbq7qaikts6t4/w1024.jpg?v=2",
+    ImageOne,
+    ImageTwo,
+    ImageThree,
   ];
 
   useEffect(() => {
@@ -29,13 +34,13 @@ const Home = () => {
   
 
   return (
-    <div className=" px-6 py-2 shadow-xl bg-[#040D12]">
+    <div className=" px-6 py-2 shadow-xl bg-slate-50">
 
 
 <div className="relative w-full h-screen flex items-center justify-center px-8 py-12 shadow-xl rounded-3xl">
       {/* Background Image Carousel */}
       <div
-        className="absolute inset-0 bg-cover bg-center rounded-3xl transition-opacity duration-1000 py-10 px-12 shadow-2xl"
+        className="absolute inset-0 bg-cover bg-center rounded-3xl transform ease-in-out transition-opacity duration-1000 py-10 px-12 shadow-2xl"
         style={{
           backgroundImage: `url(${images[currentIndex]})`,
           padding: 10,
@@ -68,9 +73,7 @@ const Home = () => {
          <div>
         <PropertyListings/>
         </div> 
-        <div>
-          <Testimonials />
-        </div>
+        
         <div>
           <ShowBlog />
           </div>
@@ -78,7 +81,13 @@ const Home = () => {
           <Faqs />
           </div>
           <div>
-          <Support />
+          <Testimonials />
+        </div>
+          <div>
+          <NewsletterSignup />
+          </div>
+          <div>
+          <DashboardShowcase />
           </div>
     </div>
   );

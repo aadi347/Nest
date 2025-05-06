@@ -85,8 +85,8 @@ const AddNest = () => {
           value={formData.flatType}
           onChange={(e) => setFormData({ ...formData, flatType: e.target.value })}
           className="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-[#2ec4b6]">
-            <option>1 BHK</option>
-            <option>2 BHK</option>
+            <option>1BHK</option>
+            <option>2BHK</option>
           </select>
         </div>
 

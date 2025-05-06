@@ -46,7 +46,7 @@ const Blog = () => {
 
   return (
     <div>
-        <div className="flex flex-col h-screen bg-black">
+        <div className="flex flex-col bg-slate-50">
             <div className='flex items-center justify-center px-4 py-2'>
        
             </div>

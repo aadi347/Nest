@@ -16,14 +16,15 @@ import Demo from './pages/Demo';
 import Dashboard from './Dashboard/Dashboard';
 import Services from './pages/Services';
 import DepartmentTable from './pages/DepartmentTable';
-// import addFlat from './dashboard/addFlat';
+import MainPropertyPages from './components/propertypages/MainPropertyPages';
+import SearchResultsPage from './pages/SearchResultsPage';
 
 const App = () => {
   const location = useLocation();
 
 
-  const hideNavbarPaths = ['/dashboard'];
-  const hideFooterPaths = ['/dashboard'];
+  const hideNavbarPaths = ['/dashboard', '/login', '/signup'];
+  const hideFooterPaths = ['/dashboard', '/login', '/signup'];
 
   const isAuthenticated = localStorage.getItem("token");
   
@@ -31,6 +32,7 @@ const App = () => {
     <>
  
       {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
+   
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -52,6 +54,8 @@ const App = () => {
         <Route path="/demo" element={<Demo />} />
         <Route path="/services" element={<Services />} />
         <Route path="/departmenttable" element={<DepartmentTable />} />
+        <Route path="/mainpropertypages" element={<MainPropertyPages />} />
+        <Route path="/searchresults" element={<SearchResultsPage />} />
         {/* <Route path="/addFlat" element={<addFlat />} /> */}
         {/* Add more routes as needed */}
       </Routes>
