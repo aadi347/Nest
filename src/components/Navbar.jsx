@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import NestLogo from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/Nest.svg";
 import { TbHomeFilled } from "react-icons/tb";
 import { RiBloggerFill } from "react-icons/ri";
 import { MdPermContactCalendar } from "react-icons/md";
@@ -64,7 +63,7 @@ const Navbar = () => {
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="relative">
                 <img
-                  src={NestLogo}
+                  src="/Nest.svg"
                   className="h-12 w-12 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
                   alt="Nest Logo"
                 />
