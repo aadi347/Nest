@@ -3,7 +3,7 @@ import NestBoardImage from '/Users/adityakumar/Desktop/Nest/frontend/src/assets/
 
 const DashboardShowcase = () => {
   return (
-    <div className="py-16">
+    <div className="py-16 bg-black rounded-3xl">
       <div className="max-w-screen-xl mx-auto px-6 md:px-12">
         {/* Container with grid layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -27,12 +27,12 @@ const DashboardShowcase = () => {
           </div>
           
           {/* Image section */}
-          <div className="relative">
+          <div className="relative ">
             <div className="transform hover:scale-105 transition-transform duration-500 ease-in-out">
               <img 
                 src={NestBoardImage} 
                 alt="Dashboard Preview" 
-                className="rounded-lg"
+                className="rounded-lg w-full h-full "
               />
             </div>
           </div>

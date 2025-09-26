@@ -4,6 +4,9 @@ import axios from "axios";
 import Illustartion from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/authentication-65.svg"
 import ErrorBox from "../components/ErrorBox";
 import LoginLoader from "../components/LoginLoader";
+import { Instagram, Twitter, Facebook, Linkedin} from 'lucide-react';
+
+
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -72,28 +75,28 @@ const Login = () => {
   />
 
   {/* Heading and Arrow */}
-  <h1 className="absolute top-8 left-1/2 whitespace-nowrap transform -translate-x-1/2 text-2xl font-bold text-gray-700 z-10">
+  <h1 className="absolute top-8 left-1/2 whitespace-nowrap transform -translate-x-1/2 text-2xl  font-bold text-gray-700 z-10">
     Login to Your Account
     <span className="ml-2 text-red-500">↓</span> {/* Arrow symbol */}
   </h1>
 
   {/* Social Media Icons */}
   <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 z-10">
-    <a href="#" className="bg-blue-500 p-3 rounded-full text-white hover:bg-blue-600">
+    <a href="#" className="bg-[#8E05C2] p-3 text-xs rounded-full text-white hover:bg-blue-600">
       {/* Replace with your social media icon */}
-      <i className="fab fa-facebook-f"></i>
+      <Instagram />
     </a>
-    <a href="#" className="bg-blue-400 p-3 rounded-full text-white hover:bg-blue-500">
+    <a href="#" className="bg-[#8E05C2] p-3 rounded-full text-white hover:bg-blue-500">
       {/* Replace with your social media icon */}
-      <i className="fab fa-twitter"></i>
+      <Twitter />
     </a>
-    <a href="#" className="bg-pink-500 p-3 rounded-full text-white hover:bg-pink-600">
+    <a href="#" className="bg-[#8E05C2] p-3 rounded-full text-white hover:bg-pink-600">
       {/* Replace with your social media icon */}
-      <i className="fab fa-instagram"></i>
+      <Facebook />
     </a>
-    <a href="#" className="bg-red-600 p-3 rounded-full text-white hover:bg-red-700">
+    <a href="#" className="bg-[#8E05C2] p-3 rounded-full text-white hover:bg-red-700">
       {/* Replace with your social media icon */}
-      <i className="fab fa-youtube"></i>
+      <Linkedin />
     </a>
   </div>
 </div>

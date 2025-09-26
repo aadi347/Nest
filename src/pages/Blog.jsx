@@ -61,7 +61,7 @@ const Blog = () => {
   
   
     <div className="flex flex-col gap-3 md:col-span-1">
-    <h2 className="text-3xl font-bold text-gray-300">The Future of Technology</h2>
+    <h2 className="text-3xl font-bold text-gray-800">The Future of Technology</h2>
     <p className="text-sm text-gray-400">Published on: Jan 30, 2025</p>
     <span className="border border-[#8E05C2] text-[#8E05C2] px-2 py-2 rounded-full w-fit text-xs font-semibold">
       Innovation

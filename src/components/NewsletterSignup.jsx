@@ -2,11 +2,11 @@ import React from 'react';
 
 const NewsletterSignup = () => {
   return (
-    <div className="relative isolate overflow-hidden  py-16 sm:py-24 lg:py-32">
+    <div className="relative isolate overflow-hidden  py-16 sm:py-24 lg:py-32 bg-black rounded-3xl">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
           <div className="max-w-xl lg:max-w-lg">
-            <h2 className="text-4xl font-semibold tracking-tight black">
+            <h2 className="text-4xl font-semibold tracking-tight black leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#dfaef3] via-[#b646e3] to-[#8E05C2]">
             Stay Inspired with Our Weekly Newsletter
             </h2>
             <p className="mt-4 text-lg text-gray-300">
@@ -22,12 +22,12 @@ const NewsletterSignup = () => {
                 type="email"
                 autoComplete="email"
                 required
-                className="min-w-0 flex-auto border rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+                className="min-w-0 flex-auto border rounded-md bg-white/5 px-3.5 py-2 text-base text-[white] outline-1 -outline-offset-1 outline-[#8E05C2] placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
                 placeholder="Enter your email"
               />
               <button
                 type="submit"
-                className="flex-none rounded-md bg-[#FF0B55] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                className="flex-none rounded-md bg-[#8E05C2] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >
                 Subscribe
               </button>
@@ -37,7 +37,7 @@ const NewsletterSignup = () => {
             <div className="flex flex-col items-start">
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
                 <svg
-                  className="size-6 text-white"
+                  className="size-6 text-[#8E05C2]"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
@@ -62,7 +62,7 @@ const NewsletterSignup = () => {
             <div className="flex flex-col items-start">
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
                 <svg
-                  className="size-6 text-white"
+                  className="size-6 text-[#8E05C2]"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}

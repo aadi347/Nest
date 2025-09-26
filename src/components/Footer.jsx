@@ -1,21 +1,21 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import NestLogo from '../assets/Nest.svg'; // Adjust the path as necessary
+import NestLogo from '../assets/Nest.svg'; 
 
 
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Top Section: Logo and Social Media */}
+    
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          {/* Logo */}
+     
           <div className="mb-6 md:mb-0">
             <img src={NestLogo} alt="" className='h-20 w-20' />
           </div>
           
-          {/* Social Media Icons */}
+      
           <div className="flex space-x-4">
             <a href="#" className=" hover:text-white transition-colors duration-200">
               <FaFacebookF className='text-[#8E05C2]' size={20} />
@@ -32,9 +32,9 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Middle Section: Links and Contact Info */}
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Company Links */}
+      
           <div>
             <h3 className="text-xl font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
@@ -61,7 +61,7 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Useful Links */}
+      
           <div>
             <h3 className="text-xl font-semibold mb-4">Useful Links</h3>
             <ul className="space-y-2">
@@ -88,7 +88,7 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Contact Information */}
+
           <div>
             <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
             <ul className="space-y-2">
@@ -120,7 +120,7 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Bottom Section: Copyright */}
+       
         <div className="border-t border-gray-700 pt-6 text-center text-gray-400">
           &copy; {new Date().getFullYear()} NEST. All rights reserved.
         </div>

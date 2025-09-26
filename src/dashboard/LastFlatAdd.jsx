@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const flats = [
   {
     id: 1,
-    image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg", // Replace with actual image URL
+    image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg", 
     name: "Luxury Apartment",
     timestamp: "2025-02-28 14:30",
     status: "Available",
@@ -43,10 +43,10 @@ const LastFlatAdd = () => {
       <div className="bg-white rounded-lg p-4 border border-gray-200">
         <h1 className="text-xl font-bold  py-2 text-gray-700">Last Flats Added</h1>
 
-        {/* Table */}
+
         <div className="overflow-x-auto mt-4 rounded-md">
           <table className="min-w-full bg-white border border-gray-200 rounded-lg">
-            {/* Table Header */}
+
             <thead>
               <tr className="bg-gray-100">
                 <th className="px-4 py-2 text-left text-xs font-semibold text-gray-600 ">
@@ -62,7 +62,7 @@ const LastFlatAdd = () => {
                   Added At
                 </th>
                 <th className="px-4 py-2 text-left text-xs font-semibold text-gray-600 ">
-                  Status
+                  Rent
                 </th>
                 <th className="px-4 py-2 text-left text-xs font-semibold text-gray-600">
                   Location
@@ -70,7 +70,7 @@ const LastFlatAdd = () => {
               </tr>
             </thead>
 
-            {/* Table Body */}
+      
             <tbody className="">
               {flats.map((flat, index) => (
                 <tr key={flat.id} className="border-b hover:bg-gray-50 ">
@@ -100,10 +100,10 @@ const LastFlatAdd = () => {
             </tbody>
           </table>
         </div>
-        {/* End Table */}
+
       </div>
 
-      {/* Image Modal */}
+
       {showImage && (
         <div
             

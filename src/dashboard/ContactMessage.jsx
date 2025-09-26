@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaCog, FaCalendarAlt } from 'react-icons/fa';
+import { MessageCircleReply, Trash2 } from 'lucide-react';
 
 const ContactMessage = () => {
-  // Sample data for the table rows
+ 
   const [messageData, setMessageData] = useState([]);
 
   useEffect(() => {
@@ -24,7 +25,7 @@ const ContactMessage = () => {
   <h2 className="text-xl font-semibold text-gray-600">Contact Us Details</h2>
 
   <div className="flex items-center space-x-4">
-    {/* Status Indicators */}
+
     <div className="flex items-center space-x-2 border border-gray-100 border-double rounded-full px-2 py-1">
       <span className="flex items-center space-x-1 text-xs text-yellow-700">
         <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
@@ -40,7 +41,7 @@ const ContactMessage = () => {
       </span>
     </div>
 
-    {/* Icons */}
+
         <div className="flex space-x-3 px-2">
           <FaCog className="text-xl cursor-pointer text-gray-400" />
           <FaCalendarAlt className="text-xl cursor-pointer text-gray-400" />
@@ -74,6 +75,10 @@ const ContactMessage = () => {
               <td className="px-4 py-2 text-gray-600">{messageDetail.email}</td>
               <td className="px-4 py-2 text-gray-600">{messageDetail.phone}</td>
               <td className="px-4 py-2 text-gray-600 whitespace-nowrap">{messageDetail.message}</td>
+              <td className="px-4 py-2 text-gray-600">
+                <button className=" text-indigo-600 text-xs px-2 py-1 rounded"><MessageCircleReply /></button>
+                <button className=" text-red-600 px-2 text-xs py-1 rounded ml-2"><Trash2 /></button>
+              </td>
             </tr>
           ))}
         </tbody>

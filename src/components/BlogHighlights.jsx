@@ -26,7 +26,7 @@ const BlogHighlights = () => {
     <div>
       <section className="py-24 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-manrope text-4xl font-bold text-white text-center mb-16">
+          <h2 className="font-manrope text-4xl font-bold text-black text-center mb-16">
             Our latest blog
           </h2>
 
@@ -57,7 +57,7 @@ const BlogHighlights = () => {
                     </p>
                     <a
                       href={`/blog/${blog._id}`}
-                      className="cursor-pointer text-lg text-indigo-600 font-semibold"
+                      className="cursor-pointer w-full text-xs text-indigo-600 border border-indigo-600 rounded-md px-2 py-2 font-semibold"
                     >
                       Read more..
                     </a>

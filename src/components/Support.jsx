@@ -68,9 +68,7 @@ const Support = () => {
             <div className="lg:mb-0 mb-10">
                 <div className="group w-full h-full">
                     <div className="relative h-full">
-                        {/* <img src={SupportImage} alt="ContactUs tailwind section" className="w-full h-full rounded-l-2xl border bg-blend-multiply object-cover"/> */}
-                        {/* <h1 className="font-manrope text-white text-4xl font-bold leading-10 absolute top-11 limgeft-11 bg-white/40 backdrop-blur-md">Contact us</h1> */}
-                        <img src={NestLogo} alt="" />
+                        
                         <div className="absolute bottom-0 w-full lg:p-11 p-5">
                             <div className="bg-white/40 backdrop-blur-md rounded-lg p-6 block">
                                 <a href="javascript:;" className="flex items-center mb-6">

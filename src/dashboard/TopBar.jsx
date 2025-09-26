@@ -24,7 +24,7 @@ const TopBar = () => {
           <div>
             <span className="text-sm font-bold block">Good morning, Admin!</span>
             <span className="text-xs block text-stone-500">
-              Tuesday, Aug 8th 2023
+              Thrusday, May 8th 2025
             </span>
           </div>
 

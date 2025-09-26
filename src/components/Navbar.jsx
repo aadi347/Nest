@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import NestLogo from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/Nest.svg";
 import { TbHomeFilled } from "react-icons/tb";
@@ -7,7 +7,8 @@ import { MdPermContactCalendar } from "react-icons/md";
 import { TbInfoSquareRoundedFilled } from "react-icons/tb";
 import { MdMiscellaneousServices } from "react-icons/md";
 import { RiSettings4Fill } from "react-icons/ri";
-
+import { HiOutlineUser } from "react-icons/hi";
+import { HiX } from "react-icons/hi";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,117 +16,186 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  // Scroll detection for glassmorphism effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMenuOpen && !event.target.closest('#navbar-container')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isMenuOpen]);
+
+  const navItems = [
+    { icon: TbHomeFilled, label: "Home", href: "/", active: true },
+    { icon: RiBloggerFill, label: "Blog", href: "/blog" },
+    { icon: TbInfoSquareRoundedFilled, label: "About", href: "/aboutus" },
+    { icon: MdMiscellaneousServices, label: "Services", href: "/services" },
+    { icon: MdPermContactCalendar, label: "Contact", href: "/contact" }
+  ];
+
   return (
-    <nav
-
-    >
-      <div className="max-w-screen-xl py-2 mt-4 flex items-center justify-between mx-auto p-4">
-        <a href="/" className="flex items-center space-x-3 ">
-          <img
-            src={NestLogo}
-            className="h-14 w-14"
-            alt="Logo"
-          />
-          <span className="self-center text-2xl font-semibold text-[#8E05C2] whitespace-nowrap dark:text-white">
+    <>
+      {/* Glassmorphism Navbar */}
+      <nav 
+        className={`fixed bg-black left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+          isScrolled 
+            ? 'bg-black backdrop-blur-xl border-b border-white/10 shadow-2xl' 
+            : 'bg-transparent'
+        }`}
+        id="navbar-container"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
             
-          </span>
-        </a>
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <a
-            href="/login"
-            className="flex items-center gap-2 text-white border-[#8E05C2] border-2 transition-all hover:scale-110 duration-300 bg-[#8E05C2] hover:[#8E05C2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z"
-                clipRule="evenodd"
-              />
-            </svg>
-            Login
-          </a>
+            {/* Logo Section */}
+            <Link to="/" className="flex items-center space-x-3 group">
+              <div className="relative">
+                <img
+                  src={NestLogo}
+                  className="h-12 w-12 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
+                  alt="Nest Logo"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#8E05C2] to-purple-600 rounded-full opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-300" />
+              </div>
+              <span className="text-xl font-bold text-white tracking-tight">
+                NEST
+              </span>
+            </Link>
 
-          <button
-            data-collapse-toggle="navbar-cta"
-            type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-cta"
-            aria-expanded={isMenuOpen}
-            onClick={toggleMenu}
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
-              <path fillRule="evenodd" d="M3 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 5.25Zm0 4.5A.75.75 0 0 1 3.75 9h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 9.75Zm0 4.5a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Zm0 4.5a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
-            </svg>
-          </button>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-1">
+              {navItems.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={index}
+                    to={item.href}
+                    className={`group relative px-4 py-2 rounded-full transition-all duration-300 ${
+                      item.active 
+                        ? 'text-[#8E05C2] bg-white/10' 
+                        : 'text-white/80 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    <div className="flex items-center space-x-2">
+                      <Icon className={`text-lg transition-colors duration-300 ${
+                        item.active ? 'text-[#8E05C2]' : 'text-white/80 group-hover:text-[#8E05C2]'
+                      }`} />
+                      <span className="text-sm font-medium">{item.label}</span>
+                    </div>
+                    
+                    {/* Hover effect */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#8E05C2]/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* CTA and Mobile Menu Button */}
+            <div className="flex items-center space-x-4">
+              
+              {/* Enhanced Login Button */}
+              <Link
+                to="/login"
+                className="group relative flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#8E05C2] to-purple-600 text-white font-medium rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#8E05C2]/25 border border-[#8E05C2]/20"
+              >
+                <HiOutlineUser className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                <span className="text-sm">Sign In</span>
+                
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+
+              {/* Mobile Menu Toggle */}
+              <button
+                onClick={toggleMenu}
+                className="md:hidden relative p-3 text-white hover:text-[#8E05C2] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#8E05C2]/50 rounded-lg"
+                aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={isMenuOpen}
+              >
+                <div className="w-6 h-6 relative">
+                  {/* Hamburger to X animation */}
+                  <span className={`absolute block h-0.5 w-6 bg-current transform transition-all duration-300 ${
+                    isMenuOpen ? 'rotate-45 top-3' : 'top-1'
+                  }`} />
+                  <span className={`absolute block h-0.5 w-6 bg-current transform transition-all duration-300 top-3 ${
+                    isMenuOpen ? 'opacity-0' : 'opacity-100'
+                  }`} />
+                  <span className={`absolute block h-0.5 w-6 bg-current transform transition-all duration-300 ${
+                    isMenuOpen ? '-rotate-45 top-3' : 'top-5'
+                  }`} />
+                </div>
+              </button>
+            </div>
+          </div>
         </div>
-        <div
-          className={`items-center justify-between ${
-            isMenuOpen ? "block" : "hidden"
-          } w-full md:flex md:w-auto md:order-1`}
-          id="navbar-cta"
-        >
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
-            <li className="flex items-center space-x-2">
-              <TbHomeFilled className="text-xl text-[#8E05C2]" />
-              <a
-                href="/"
-                className="text-[#8E05C2] font-semibold text-xs hover:text-[#8E05C2] dark:text-white"
-                aria-current="page"
-              >
-                Home
-              </a>
-            </li>
 
-            <li className="flex items-center space-x-2">
-              <RiBloggerFill className="text-xl text-[#8E05C2] shadow-2xl" />
-              <a
-                href="/blog"
-                className="text-[#8E05C2] font-semibold text-xs hover:text-[#8E05C2] dark:text-white"
-                aria-current="page"
-              >
-                Blog
-              </a>
-            </li>
+        {/* Mobile Menu */}
+        <div className={`md:hidden transition-all duration-500 ease-in-out ${
+          isMenuOpen 
+            ? 'max-h-screen opacity-100' 
+            : 'max-h-0 opacity-0 overflow-hidden'
+        }`}>
+          <div className="px-4 pb-6 bg-black/95 backdrop-blur-xl border-t border-white/10">
+            <div className="space-y-1 pt-4">
+              {navItems.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={index}
+                    to={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`group flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-300 ${
+                      item.active 
+                        ? 'text-[#8E05C2] bg-white/10 shadow-lg' 
+                        : 'text-white/80 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    <Icon className={`text-xl transition-colors duration-300 ${
+                      item.active ? 'text-[#8E05C2]' : 'text-white/80 group-hover:text-[#8E05C2]'
+                    }`} />
+                    <span className="font-medium">{item.label}</span>
+                    
+                    {/* Mobile hover effect */}
+                    <div className="flex-1" />
+                    <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      item.active ? 'bg-[#8E05C2]' : 'bg-transparent group-hover:bg-[#8E05C2]/50'
+                    }`} />
+                  </Link>
+                );
+              })}
+            </div>
 
-            <li className="flex items-center space-x-2">
-              <TbInfoSquareRoundedFilled className="text-xl text-[#8E05C2]" />
-              <a
-                href="/aboutus"
-                className="text-[#8E05C2] font-semibold text-xs hover:text-[#8E05C2] dark:text-white"
+            {/* Mobile CTA */}
+            <div className="pt-4 mt-4 border-t border-white/10">
+              <Link
+                to="/login"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-gradient-to-r from-[#8E05C2] to-purple-600 text-white font-medium rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-[#8E05C2]/25"
               >
-                About
-              </a>
-            </li>
-
-            <li className="flex items-center space-x-2">
-              <RiSettings4Fill className="text-xl text-[#8E05C2]" />
-              <a
-                href="/services"
-                className="text-[#8E05C2] font-semibold text-xs hover:text-[#8E05C2] dark:text-white"
-              >
-                Services
-              </a>
-            </li>
-
-            <li className="flex items-center space-x-2">
-              <MdPermContactCalendar className="text-xl text-[#8E05C2]" />
-              <a
-                href="#"
-                className="text-[#8E05C2] font-semibold text-xs hover:text-[#8E05C2] dark:text-white"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
+                <HiOutlineUser className="w-5 h-5" />
+                <span>Sign In to Your Account</span>
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Spacer to prevent content overlap */}
+      <div className="h-20" />
+    </>
   );
 };
 

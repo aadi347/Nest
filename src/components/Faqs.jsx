@@ -7,7 +7,7 @@ const Faqs = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <h2
-            className="text-4xl font-manrope text-center font-bold text-white leading-[3.25rem]"
+            className="text-4xl font-manrope text-center font-bold leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#dfaef3] via-[#b646e3] to-[#8E05C2] "
           >
             Frequently asked questions
           </h2>

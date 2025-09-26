@@ -13,11 +13,12 @@ import AboutUs from './pages/AboutUs';
 import Account from './pages/Account';
 import Blog  from './pages/Blog';
 import Demo from './pages/Demo';
-import Dashboard from './Dashboard/Dashboard';
+import Dashboard from '../src/dashboard/Dashboard.jsx';
 import Services from './pages/Services';
 import DepartmentTable from './pages/DepartmentTable';
 import MainPropertyPages from './components/propertypages/MainPropertyPages';
 import SearchResultsPage from './pages/SearchResultsPage';
+import Hellobar from './hellobar';
 
 const App = () => {
   const location = useLocation();
@@ -56,6 +57,7 @@ const App = () => {
         <Route path="/departmenttable" element={<DepartmentTable />} />
         <Route path="/mainpropertypages" element={<MainPropertyPages />} />
         <Route path="/searchresults" element={<SearchResultsPage />} />
+        <Route path="/hellobar" element={<Hellobar />} />
         {/* <Route path="/addFlat" element={<addFlat />} /> */}
         {/* Add more routes as needed */}
       </Routes>

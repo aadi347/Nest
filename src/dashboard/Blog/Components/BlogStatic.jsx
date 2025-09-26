@@ -12,25 +12,25 @@ import {
 
 const blogData = [
   {
-    title: 'React Basics',
+    title: 'Why Millennials Prefer Renting',
     views: 3500,
     likes: 1200,
     comments: 150
   },
   {
-    title: 'Advanced React Patterns',
+    title: 'Rise of Co-Living Spaces in Indian',
     views: 4200,
     likes: 1800,
     comments: 300
   },
   {
-    title: 'JavaScript Tips',
+    title: 'Rise of Co-Living Spaces in Indian',
     views: 2700,
     likes: 900,
     comments: 90
   },
   {
-    title: 'Node.js Guide',
+    title: 'Navigating the Rise of Co-Living',
     views: 3900,
     likes: 1300,
     comments: 200
@@ -39,7 +39,7 @@ const blogData = [
 
 const BlogStatic = () => {
   return (
-    <div className="w-full p-4 bg-white shadow rounded-md">
+    <div className="w-full p-4 bg-white rounded-md">
       <h2 className="text-xl font-semibold mb-4">Blog Performance Chart</h2>
       <ResponsiveContainer width="100%" height={400}>
         <BarChart data={blogData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
@@ -50,7 +50,7 @@ const BlogStatic = () => {
           <Legend />
           <Bar
             dataKey="views"
-            fill="#8884d8"
+            fill="#2ec4b6"
             name="Views"
             animationDuration={1000}
             animationEasing="ease-out"
@@ -64,7 +64,7 @@ const BlogStatic = () => {
           />
           <Bar
             dataKey="comments"
-            fill="#ffc658"
+            fill="#17655e"
             name="Comments"
             animationDuration={1400}
             animationEasing="ease-out"
