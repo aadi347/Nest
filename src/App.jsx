@@ -18,7 +18,7 @@ import Services from './pages/Services';
 import DepartmentTable from './pages/DepartmentTable';
 import MainPropertyPages from './components/propertypages/MainPropertyPages';
 import SearchResultsPage from './pages/SearchResultsPage';
-import Hellobar from './hellobar';
+import Hellobar from './Hellobar';
 
 const App = () => {
   const location = useLocation();
