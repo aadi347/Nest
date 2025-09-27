@@ -1,5 +1,5 @@
 import React from 'react'
-import "/Users/adityakumar/Desktop/Nest/frontend/src/components/LoginLoader.css";
+
 
 const LoginLoader = () => {
     return (

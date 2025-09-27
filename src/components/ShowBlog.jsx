@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Undraw from "../assets/undraw_best-place_dhzp.svg"
+
 
 const ShowBlog = () => {
     useEffect(() => {

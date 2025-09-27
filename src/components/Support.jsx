@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import Modal from '../components/Modal';
-import SupportImage from '/Users/adityakumar/Desktop/Nest/frontend/src/assets/women-web-developer-with-laptop.svg';
-import NestLogo from '/Users/adityakumar/Desktop/Nest/frontend/src/assets/Nest.svg';
 
 const Support = () => {
     const [isOpen, setIsOpen] = useState(false);

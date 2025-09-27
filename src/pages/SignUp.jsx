@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import NestLogo from "../assets/nest-protocol-nest-logo.png";
-import Illustartion from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/authentication-65.svg"
 
 const SignUp = () => {
   const [loading, setLoading] = useState(false);

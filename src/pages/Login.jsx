@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Illustartion from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/authentication-65.svg"
 import ErrorBox from "../components/ErrorBox";
 import LoginLoader from "../components/LoginLoader";
 import { Instagram, Twitter, Facebook, Linkedin} from 'lucide-react';
@@ -69,7 +68,7 @@ const Login = () => {
       <div className="hidden md:flex md:w-1/2 lg:w-2/5 p-6 items-center justify-center rounded-lg bg-white relative">
   {/* Image */}
   <img
-    src={Illustartion}
+    src="/authentication-65.svg"
     alt="Illustration"
     className="w-full h-auto object-cover"
   />

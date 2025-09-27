@@ -1,5 +1,5 @@
 import React from 'react'
-import NestBoardImage from '/Users/adityakumar/Desktop/Folder/Nest/frontend/src/assets/NestBoard.png';
+
 
 const NestBoardFeature = () => {
   return (
@@ -10,7 +10,7 @@ const NestBoardFeature = () => {
         </div>
         <div className=''>
             <img
-            src={NestBoardImage}
+            src="/NestBoardImage.png"
             alt='Nestboard'
             className='h-full px-10 py-5 rounded-lg w-full'
             >

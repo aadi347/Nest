@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Illustration from "../assets/icons/illustartion.jpg";
-import Reception from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/receptionist.svg"
+
 
 const AboutUs = () => {
   return (
@@ -26,7 +25,7 @@ const AboutUs = () => {
       </div>
       
       {/* Image */}
-      <img src={Reception} alt="Illustration" className="w-[500px] h-[500px] absolute top-20 left-1/2 " />
+      <img src="/receptionist.svg" alt="Illustration" className="w-[500px] h-[500px] absolute top-20 left-1/2 " />
     </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import NestBoardImage from '/Users/adityakumar/Desktop/Nest/frontend/src/assets/NestBoardImage.png'; 
+
 
 const DashboardShowcase = () => {
   return (
@@ -30,7 +30,7 @@ const DashboardShowcase = () => {
           <div className="relative ">
             <div className="transform hover:scale-105 transition-transform duration-500 ease-in-out">
               <img 
-                src={NestBoardImage} 
+                src="/NestBoardImage.png" 
                 alt="Dashboard Preview" 
                 className="rounded-lg w-full h-full "
               />

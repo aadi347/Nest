@@ -5,10 +5,6 @@ import PropertyListings from '../components/PropertyListings';
 import Features from '../components/Features';
 import ShowBlog from '../components/ShowBlog';
 import Faqs from "../components/faqs";
-import Support from "../components/Support";
-import ImageOne from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/imag1.jpg";
-import ImageTwo from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/imag2.jpg";
-import ImageThree from "/Users/adityakumar/Desktop/Nest/frontend/src/assets/image3.jpg";
 import NewsletterSignup from "../components/NewsletterSignup";
 import DashboardShowcase from "../components/DashboardShowcase";
 
@@ -16,7 +12,7 @@ const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState({});
 
-  const images = [ImageOne, ImageTwo, ImageThree];
+  const images = ["/imag1.jpg", "/imag2.jpg", "/image3.jpg"];
 
   useEffect(() => {
     const interval = setInterval(() => {

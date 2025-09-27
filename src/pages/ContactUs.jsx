@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ContactImage from "../assets/icons/undraw_contact_us_re_4qqt.svg"
 import Modal from '../components/Modal';
 
 const ContactUs = () => {
