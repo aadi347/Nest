@@ -4,9 +4,9 @@ import Testimonials from '../components/Testimonials';
 import PropertyListings from '../components/PropertyListings';
 import Features from '../components/Features';
 import ShowBlog from '../components/ShowBlog';
-import Faqs from "../components/faqs";
+import Faqs from "../components/Faqs";
 import NewsletterSignup from "../components/NewsletterSignup";
-import DashboardShowcase from "../components/DashboardShowcase";
+
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
