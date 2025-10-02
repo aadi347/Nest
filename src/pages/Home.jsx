@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from '../components/searchBar';
-import Testimonials from '../components/Testimonials';
 import PropertyListings from '../components/PropertyListings';
 import Features from '../components/Features';
 import ShowBlog from '../components/ShowBlog';
-import Faqs from "../components/Faqs";
-import NewsletterSignup from "../components/NewsletterSignup";
+import TopCities from "../components/TopCities";
 
 
 const Home = () => {
@@ -180,7 +178,7 @@ const Home = () => {
 
       {/* Features Section with Modern Spacing */}
       <section 
-        className={`py-20 bg-gray-50 transition-all duration-1000 ${
+        className={` transition-all duration-1000 ${
           isVisible.features ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
         data-animate 
@@ -191,7 +189,7 @@ const Home = () => {
 
       {/* Property Listings with Enhanced Container */}
       <section 
-        className={`py-20 bg-white transition-all duration-1000 ${
+        className={`transition-all duration-1000 ${
           isVisible.listings ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
         data-animate 
@@ -204,7 +202,7 @@ const Home = () => {
 
       {/* Blog Section */}
       <section 
-        className={`py-20 bg-gray-50 transition-all duration-1000 ${
+        className={` transition-all duration-1000 ${
           isVisible.blog ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
         data-animate 
@@ -213,38 +211,16 @@ const Home = () => {
         <ShowBlog />
       </section>
 
-      {/* Testimonials with Dark Theme */}
-      <section 
-        className={`py-20 bg-black text-white transition-all duration-1000 ${
-          isVisible.testimonials ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+       <section 
+        className={` transition-all duration-1000 ${
+          isVisible.blog ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
         data-animate 
-        id="testimonials"
+        id="blog"
       >
-        <Testimonials />
+        <TopCities />
       </section>
-
-      {/* FAQ Section */}
-      <section 
-        className={`py-20 bg-white transition-all duration-1000 ${
-          isVisible.faqs ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}
-        data-animate 
-        id="faqs"
-      >
-        <Faqs />
-      </section>
-
-      {/* Newsletter with Modern Design */}
-      <section 
-        className={`py-20 bg-gray-900 text-white transition-all duration-1000 ${
-          isVisible.newsletter ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}
-        data-animate 
-        id="newsletter"
-      >
-        <NewsletterSignup />
-      </section>
+     
     </div>
   );
 };

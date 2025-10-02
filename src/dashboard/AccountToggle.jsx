@@ -2,7 +2,7 @@ import React from 'react'
 
 const AccountToggle = () => {
     return (
-        <div className='border-b mb-4 pb-4 mt-2 border-stone-300'>
+        <div className=' mb-4 pb-4 mt-2 '>
             <button className='flex p-0.5 hover:bg-stone-200 rounded transition-colors relative gap-2 w-full'>
             <img src="https://img.freepik.com/premium-photo/simple-man-icon-with-slight-smile-set-against-round-minimalistic-backdrop-perfect_1283595-13323.jpg" 
              alt='account' 

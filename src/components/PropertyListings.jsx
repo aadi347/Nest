@@ -108,24 +108,14 @@ const PropertyListings = () => {
   };
 
   return (
-    <section className="py-20  relative overflow-hidden">
+    <section className="relative overflow-hidden py-10">
       {/* Background Decorations */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#8E05C2]/5 to-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-500/5 to-indigo-500/10 rounded-full blur-3xl" />
-      </div>
+    
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <div 
-            data-aos="fade-up" 
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#8E05C2]/10 to-purple-500/10 border border-[#8E05C2]/20 rounded-full px-6 py-2 text-[#8E05C2] font-semibold text-sm mb-6"
-          >
-            <TrendingUp className="w-4 h-4" />
-            Featured Properties
-          </div>
-          
+         
           <h2
             className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight"
             data-aos="fade-up"
@@ -147,47 +137,7 @@ const PropertyListings = () => {
           </p>
 
           {/* View Toggle & Actions */}
-          <div 
-            className="flex flex-col sm:flex-row items-center justify-between gap-4"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div className="flex items-center gap-3">
-              <div className="flex items-center bg-white border border-gray-200 rounded-xl p-1 shadow-sm">
-                <button
-                  onClick={() => setViewMode('grid')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 ${
-                    viewMode === 'grid' 
-                      ? 'bg-[#8E05C2] text-white shadow-md' 
-                      : 'text-gray-600 hover:bg-gray-50'
-                  }`}
-                >
-                  <Grid3X3 className="w-4 h-4" />
-                  <span className="text-sm font-medium">Grid</span>
-                </button>
-                <button
-                  onClick={() => setViewMode('list')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 ${
-                    viewMode === 'list' 
-                      ? 'bg-[#8E05C2] text-white shadow-md' 
-                      : 'text-gray-600 hover:bg-gray-50'
-                  }`}
-                >
-                  <LayoutList className="w-4 h-4" />
-                  <span className="text-sm font-medium">List</span>
-                </button>
-              </div>
-              
-              <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-600 hover:bg-gray-50 transition-colors duration-200 shadow-sm">
-                <Filter className="w-4 h-4" />
-                <span className="text-sm font-medium">Filters</span>
-              </button>
-            </div>
-
-            <div className="text-sm text-gray-500">
-              Showing {listings.length} of {listings.length} properties
-            </div>
-          </div>
+       
         </div>
 
         {/* Property Grid */}
@@ -348,14 +298,7 @@ const PropertyListings = () => {
           ))}
         </div>
 
-        {/* Load More Section */}
-        <div className="text-center mt-16" data-aos="fade-up">
-          <button className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#8E05C2] to-purple-600 text-white font-semibold rounded-full hover:from-[#7201A8] hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
-            <span>Load More Properties</span>
-            <ArrowRight className="w-5 h-5" />
-          </button>
-          <p className="text-gray-500 text-sm mt-4">Showing 3 of 24 properties</p>
-        </div>
+       
       </div>
     </section>
   );

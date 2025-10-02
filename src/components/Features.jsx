@@ -64,19 +64,14 @@ const Features = () => {
     }
   ];
 
-  const stats = [
-    { number: "50K+", label: "Happy Customers", icon: Users },
-    { number: "98%", label: "Success Rate", icon: CheckCircle },
-    { number: "24/7", label: "Support Hours", icon: Clock },
-    { number: "4.9", label: "Customer Rating", icon: Star }
-  ];
+  
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+    <section className=" py-10 bg-white relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#8E05C2]/10 to-purple-500/5 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-500/10 to-indigo-500/5 rounded-full blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-80 h-80  rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80  rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -112,26 +107,6 @@ const Features = () => {
         </div>
 
         {/* Stats Section */}
-        <div 
-          data-aos="fade-up" 
-          data-aos-delay="300"
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
-        >
-          {stats.map((stat, index) => {
-            const IconComponent = stat.icon;
-            return (
-              <div 
-                key={index}
-                className="bg-white border border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-              >
-                <IconComponent className="w-8 h-8 text-[#8E05C2] mx-auto mb-3" />
-                <div className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1">{stat.number}</div>
-                <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
-              </div>
-            );
-          })}
-        </div>
-
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {features.map((feature, index) => {

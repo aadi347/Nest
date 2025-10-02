@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from "./Grid"
 import LastFlatAdd from "./LastFlatAdd"
-import TopBar from './TopBar'
+
 import PropertyStatusChart from './PropertyStatusChart'
 const DashboardPage = () => {
     return (
